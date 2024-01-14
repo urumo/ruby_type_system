@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "ruby_type_system/version"
+require_relative "ruby_type_system/token"
 require_relative "ruby_type_system/compressor"
 require_relative "ruby_type_system/lexer"
 require_relative "ruby_type_system/parser"
@@ -19,7 +20,9 @@ module RubyTypeSystem
     end
 
     def tokenize(code)
-      Lexer.new(code).tokenize
+      lexer = Lexer.new(code)
+      lexer.tokenize
+      lexer
     end
 
     def compile(code)
