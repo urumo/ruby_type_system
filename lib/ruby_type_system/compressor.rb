@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-require "debug"
-
 module RubyTypeSystem
   class Compressor
     attr_reader :file_path, :already_required
@@ -14,20 +12,29 @@ module RubyTypeSystem
     end
 
     def compress
-      compressed_code = process_file(file_path)
+      program_begin = <<~RUBY
+        #!/usr/bin/env ruby
+
+        # frozen_string_literal: true
+      RUBY
+      compressed_code = program_begin + process_file(file_path)
       File.write("dist/compressed.rb", compressed_code)
     end
 
     private
 
     def process_file(path)
-      code = File.read(path)
+      return "" if %w[.so .o .dll .dylib .bundle].include?(File.extname(path))
+
+      code = File.read(path).force_encoding("UTF-8").encode("UTF-8", invalid: :replace, undef: :replace, replace: "")
 
       code.lines.map do |line|
         if line.start_with?("require_relative")
           process_require_relative(line, path)
         elsif line.start_with?("require")
           process_require(line)
+        elsif ["#!/usr/bin/env ruby", "# frozen_string_literal: true"].include?(line.strip)
+          ""
         else
           line
         end
@@ -46,9 +53,11 @@ module RubyTypeSystem
 
     def process_require(line)
       required_file = line.split.last[1..-2]
-      required_path = Gem.find_files(required_file).first
+      gem_require = Gem.find_files(required_file)
+      required_path = gem_require.first
 
-      return "" if required_path.nil? || already_required.include?(required_path)
+      return line if required_path.nil?
+      return "" if already_required.include?(required_path)
 
       already_required << required_path
       process_file(required_path)
