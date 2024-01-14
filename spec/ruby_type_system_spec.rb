@@ -7,9 +7,23 @@ RSpec.describe RubyTypeSystem do
 
   it "does lex" do
     code = <<~CODE
+      class Klass
+        def initialize(foo: Integer, bar: String)
+          @foo = foo
+          @bar = bar
+        end
+        def greet: Integer
+          foo.times do
+            puts bar
+          end
+
+          foo
+        end
+      end
       foo: Integer = 1
       bar: String = "hello"
-      foo_bar: Array[Integer] = [1, 2, 3]
+      foo_bar: Klass = Klass.new(foo, bar)
+      greeted_n_times: Integer = foo_bar.greet
     CODE
 
     lexer = RubyTypeSystem.tokenize(code)

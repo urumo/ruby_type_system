@@ -79,11 +79,14 @@ module RubyTypeSystem
     TRUE = :TRUE
     FALSE = :FALSE
     SUPER = :SUPER
-    BEGIN_T = :BEGIN
+    BEGIN_T = :BEGIN_T
+    BEGIN_CAPITAL = :BEGIN_CAPITAL
     RESCUE = :RESCUE
     ENSURE = :ENSURE
-    END_T = :END
+    END_T = :END_T
+    END_CAPITAL = :END_CAPITAL
     ALIAS = :ALIAS
+    DEFINED = :DEFINED
     UNDEF = :UNDEF
     CASE = :CASE
     WHEN = :WHEN
