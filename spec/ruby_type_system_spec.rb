@@ -9,21 +9,22 @@ RSpec.describe RubyTypeSystem do
     code = <<~CODE
       class Klass
         def initialize(foo: Integer, bar: String)
+          @@foo_bar = 1
           @foo = foo
           @bar = bar
         end
-        def greet: Integer
-          foo.times do
-            puts bar
+        def greet: Float
+          foo.times do |i|
+            puts "#\{bar\} #\{i\}"
           end
 
-          foo
+          12.2
         end
       end
       foo: Integer = 1
-      bar: String = "hello"
+      bar: String = "he\"l\"lo"
       foo_bar: Klass = Klass.new(foo, bar)
-      greeted_n_times: Integer = foo_bar.greet
+      greeted_n_times: Float = foo_bar.greet
     CODE
 
     lexer = RubyTypeSystem.tokenize(code)
