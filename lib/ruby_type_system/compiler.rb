@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 module RubyTypeSystem
+
+  class CompilerError < StandardError; end
   class Compiler
     attr_reader :code, :output
 
@@ -31,13 +33,14 @@ module RubyTypeSystem
     def compile_code
       @variables.each do |name, data|
         @output += "#{name}= #{data[:value]}\n"
-        @output += "raise TypeError, \"Expected type #{data[:type]}, got #{name}.class\" unless" \
-          " #{name}.is_a?(#{data[:type]})\n"
+        @output += "raise TypeError, \"Expected type #{data[:type]}, got #{name}.class\" unless " \
+                   "#{name}.is_a?(#{data[:type]})\n"
       end
     end
 
     def write_file
-      File.open("compiled.rb", "w") { |file| file.write(@output) }
+      FileUtils.mkdir_p("dist")
+      File.write("dist/compiled.rb", @output)
     end
   end
 end

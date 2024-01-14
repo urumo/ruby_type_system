@@ -7,5 +7,6 @@
 /spec/reports/
 /tmp/
 .idea
+dist
 # rspec failure tracking
 .rspec_status

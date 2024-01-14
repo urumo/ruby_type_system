@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.description = "Ever wanted to have typescript in Ruby? Well, now you can!"
   spec.homepage = "https://rts.svck.dev"
   spec.license = "MIT"
-  spec.required_ruby_version = ">= 2.6.0"
+  spec.required_ruby_version = ">= 3.0.0"
 
   spec.metadata["homepage_uri"] = spec.homepage
   # spec.metadata["source_code_uri"] = "TODO: Put your gem's public repo URL here."
@@ -35,4 +35,6 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
+  spec.metadata["rubygems_mfa_required"] = "true"
+  spec.add_development_dependency "debug"
 end
