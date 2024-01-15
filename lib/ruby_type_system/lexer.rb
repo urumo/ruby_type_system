@@ -21,33 +21,24 @@ module RubyTypeSystem
     def tokenize
       i = 0
       line = 1
-      inside_string = false
       while i < code.size
         char = code[i]
-        if inside_string
-          start = i
-          i += 1 while code[i] != '"' || (code[i] == '"' && code[i - 1] == "\\")
-          tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
-          inside_string = false
-          i += 1
-        end
+        # if inside_string
+        #   start = i
+        #   i += 1 while code[i] != '"' || (code[i] == '"' && code[i - 1] == "\\")
+        #   tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
+        #   inside_string = false
+        #   i += 1
+        # end
         case char
         when "\n"
           line += 1
           i += 1
-        when "@"
-          start = i
-          is_class_var = code[i + 1] == "@"
-          i += is_class_var ? 2 : 1
-          i += 1 while code[i] =~ /[[:word:]]/
-          type = is_class_var ? ::RubyTypeSystem::TokenType::CLASS_VAR : ::RubyTypeSystem::TokenType::INSTANCE_VAR
-          tokens << Token.new(type, code[start...i].strip, line, start)
         when /[[:alpha:]_]/
           start = i
           i += 1 while code[i] =~ /[[:word:]]/
           token = code[start...i]
-          type = check_type_or_keyword(token)
-          tokens << Token.new(type, token, line, start)
+          tokens << Token.new(::RubyTypeSystem::TokenType::IDENTIFIER, token, line, start)
         when ":"
           tokens << Token.new(::RubyTypeSystem::TokenType::COLON, char, line, i)
           i += 1
@@ -57,22 +48,139 @@ module RubyTypeSystem
           if code[i] == "." && code[i + 1] =~ /[[:digit:]]/
             i += 1
             i += 1 while code[i] =~ /[[:digit:]]/
-            tokens << Token.new(::RubyTypeSystem::TokenType::FLOAT, code[start...i].strip, line, start)
-          else
-            tokens << Token.new(::RubyTypeSystem::TokenType::INTEGER, code[start...i].strip, line, start)
           end
+          tokens << Token.new(::RubyTypeSystem::TokenType::NUMBER, code[start..i].strip, line, start)
         when "="
-          tokens << Token.new(::RubyTypeSystem::TokenType::ASSIGN, char, line, i)
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::EQUAL, "==", line, i)
+            i += 1
+          elsif code[i + 1] == "~"
+            tokens << Token.new(::RubyTypeSystem::TokenType::MATCH, "=~", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::ASSIGN, char, line, i)
+          end
           i += 1
         when '"'
-          inside_string = true
+          tokens << Token.new(::RubyTypeSystem::TokenType::DOUBLE_QUOTE, char, line, i)
+          # inside_string = true
           i += 1
-          # start = i
-          # i += 1
-          # i += 1 while code[i] != '"' || (code[i] == '"' && code[i - 1] == '\\')
-          # i += 1
-          # tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
+        when "'"
+          tokens << Token.new(::RubyTypeSystem::TokenType::SINGLE_QUOTE, char, line, i)
+          i += 1
+        when "+"
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::PLUS_EQUAL, "+=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::PLUS, char, line, i)
+          end
+          i += 1
+        when "-"
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::MINUS_EQUAL, "-=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::MINUS, char, line, i)
+          end
+          i += 1
+        when "*"
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::MULTIPLY_EQUAL, "*=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::MULTIPLY, char, line, i)
+          end
+          i += 1
+        when "/"
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::DIVIDE_EQUAL, "/=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::DIVIDE, char, line, i)
+          end
+          i += 1
+        when "#"
+          tokens << Token.new(::RubyTypeSystem::TokenType::HASH, char, line, i)
+          i += 1
+        when "\\"
+          tokens << Token.new(::RubyTypeSystem::TokenType::BACKSLASH, char, line, i)
+          i += 1
+        when "("
+          tokens << Token.new(::RubyTypeSystem::TokenType::LPAREN, char, line, i)
+          i += 1
+        when ")"
+          tokens << Token.new(::RubyTypeSystem::TokenType::RPAREN, char, line, i)
+          i += 1
+        when "{"
+          tokens << Token.new(::RubyTypeSystem::TokenType::LBRACE, char, line, i)
+          i += 1
+        when "}"
+          tokens << Token.new(::RubyTypeSystem::TokenType::RBRACE, char, line, i)
+          i += 1
+        when "["
+          tokens << Token.new(::RubyTypeSystem::TokenType::LBRACKET, char, line, i)
+          i += 1
+        when "]"
+          tokens << Token.new(::RubyTypeSystem::TokenType::RBRACKET, char, line, i)
+          i += 1
+        when ","
+          tokens << Token.new(::RubyTypeSystem::TokenType::COMMA, char, line, i)
+          i += 1
+        when "."
+          tokens << Token.new(::RubyTypeSystem::TokenType::DOT, char, line, i)
+          i += 1
+        when ";"
+          tokens << Token.new(::RubyTypeSystem::TokenType::SEMICOLON, char, line, i)
+          i += 1
+        when "|"
+          if code[i + 1] == "|"
+            tokens << Token.new(::RubyTypeSystem::TokenType::OR, "||", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::PIPE, char, line, i)
+          end
+          i += 1
+        when "&"
+          if code[i + 1] == "&"
+            tokens << Token.new(::RubyTypeSystem::TokenType::AND, "&&", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::AMPERSAND, char, line, i)
+          end
+          i += 1
+        when "!"
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::NOT_EQUAL, "!=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::BANG, char, line, i)
+          end
+          i += 1
+        when "?"
+          tokens << Token.new(::RubyTypeSystem::TokenType::QUESTION, char, line, i)
+          i += 1
+        when "@"
+          if code[i + 1] == "@"
+            tokens << Token.new(::RubyTypeSystem::TokenType::ATAT, "@@", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::AT, "@", line, i)
+          end
+          i += 1
+        when "$"
+          tokens << Token.new(::RubyTypeSystem::TokenType::DOLLAR, char, line, i)
+          i += 1
+        when "%"
+          tokens << Token.new(::RubyTypeSystem::TokenType::PERCENT, char, line, i)
+          i += 1
+        when "^"
+          tokens << Token.new(::RubyTypeSystem::TokenType::CARET, char, line, i)
+          i += 1
+        when " "
+          i += 1
         else
+          raise LexerError, "Unknown character #{char}"
           i += 1
         end
 

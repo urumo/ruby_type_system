@@ -1,0 +1,4 @@
+foo: Integer = 1
+bar: String = "hel\"l\"o"
+foo_bar: Klass = Klass.new(foo, bar)
+greeted_n_times: Float = foo_bar.greet

@@ -1,0 +1,6 @@
+class Klass
+  def initialize(foo: String)
+    @foo = foo
+    @@bar = 12.34
+  end
+end

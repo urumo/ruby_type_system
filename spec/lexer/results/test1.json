@@ -1,0 +1,122 @@
+[
+  {
+    "type": "IDENTIFIER",
+    "literal": "class",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Klass",
+    "line": 1,
+    "column": 6
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "def",
+    "line": 2,
+    "column": 14
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "initialize",
+    "line": 2,
+    "column": 18
+  },
+  {
+    "type": "LPAREN",
+    "literal": "(",
+    "line": 2,
+    "column": 28
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo",
+    "line": 2,
+    "column": 29
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 2,
+    "column": 32
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "String",
+    "line": 2,
+    "column": 34
+  },
+  {
+    "type": "RPAREN",
+    "literal": ")",
+    "line": 2,
+    "column": 40
+  },
+  {
+    "type": "AT",
+    "literal": "@",
+    "line": 3,
+    "column": 46
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo",
+    "line": 3,
+    "column": 47
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 3,
+    "column": 51
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo",
+    "line": 3,
+    "column": 53
+  },
+  {
+    "type": "ATAT",
+    "literal": "@@",
+    "line": 4,
+    "column": 61
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "bar",
+    "line": 4,
+    "column": 63
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 4,
+    "column": 67
+  },
+  {
+    "type": "NUMBER",
+    "literal": "12.34",
+    "line": 4,
+    "column": 69
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "end",
+    "line": 5,
+    "column": 77
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "end",
+    "line": 6,
+    "column": 81
+  },
+  {
+    "type": "EOF",
+    "literal": null,
+    "line": 1,
+    "column": 84
+  }
+]

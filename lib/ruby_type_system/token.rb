@@ -6,7 +6,7 @@ module RubyTypeSystem
   Token = Struct.new(:type, :literal, :line, :column) do
     def to_hash
       {
-        type: type,
+        type: type.to_s,
         literal: literal,
         line: line,
         column: column
@@ -17,6 +17,7 @@ module RubyTypeSystem
     EOF = :EOF
     IDENTIFIER = :IDENTIFIER
     NUMERIC = :NUMERIC
+    NUMBER = :NUMBER
     INTEGER = :INTEGER
     FLOAT = :FLOAT
     STRING = :STRING
@@ -55,7 +56,11 @@ module RubyTypeSystem
     BANG = :BANG
     QUESTION = :QUESTION
     AT = :AT
+    ATAT = :ATAT
     DOLLAR = :DOLLAR
+    DOUBLE_QUOTE = :DOUBLE_QUOTE
+    SINGLE_QUOTE = :SINGLE_QUOTE
+    BACKSLASH = :BACKSLASH
     PERCENT = :PERCENT
     CARET = :CARET
     TILDE = :TILDE

@@ -1,0 +1,7 @@
+def greet: Float
+  foo.times do |i|
+    puts "#{bar} #{i}"
+  end
+
+  56.78
+end

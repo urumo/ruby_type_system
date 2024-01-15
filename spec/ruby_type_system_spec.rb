@@ -3,33 +3,26 @@
 require "json"
 
 RSpec.describe RubyTypeSystem do
-  it "has a version number" do
-    expect(RubyTypeSystem::VERSION).not_to be nil
+  describe "lexer" do
+    let(:test_path) { File.join(File.dirname(__FILE__), "lexer/examples") }
+    let(:result_path) { File.join(File.dirname(__FILE__), "lexer/results") }
+    let(:tests) { Dir.entries(test_path).reject { |f| File.directory? f } }
+    it "has tests to pass" do
+      pp tests
+      expect(tests).not_to be_empty
+    end
+
+    it "passes tests from examples folder" do
+      tests.each do |test_case|
+        code = File.read(File.join(test_path, test_case))
+        lexer = RubyTypeSystem.tokenize(code)
+        json = JSON.parse(File.read(File.join(result_path, "#{test_case}.json")), symbolize_names: true)
+        expect(lexer.tokens.map(&:to_hash)).to eq(json)
+      end
+    end
   end
 
-  it "does lex" do
-    code = '
-      class Klass
-        def initialize(foo: Integer, bar: String)
-          @@foo_bar = 1
-          @foo = foo
-          @bar = bar
-        end
-        def greet: Float
-          foo.times do |i|
-            puts "#{bar} #{i}"
-          end
-
-          12.2
-        end
-      end
-      foo: Integer = 1
-      bar: String = "hel\"l\"o"
-      foo_bar: Klass = Klass.new(foo, bar)
-      greeted_n_times: Float = foo_bar.greet
-    '
-
-    lexer = RubyTypeSystem.tokenize(code)
-    pp lexer.tokens.map(&:to_hash)
+  it "has a version number" do
+    expect(RubyTypeSystem::VERSION).not_to be nil
   end
 end

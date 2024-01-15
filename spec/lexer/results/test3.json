@@ -1,0 +1,230 @@
+[
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Integer",
+    "line": 1,
+    "column": 5
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 1,
+    "column": 13
+  },
+  {
+    "type": "NUMBER",
+    "literal": "1",
+    "line": 1,
+    "column": 15
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "bar",
+    "line": 2,
+    "column": 17
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 2,
+    "column": 20
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "String",
+    "line": 2,
+    "column": 22
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 2,
+    "column": 29
+  },
+  {
+    "type": "DOUBLE_QUOTE",
+    "literal": "\"",
+    "line": 2,
+    "column": 31
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "hel",
+    "line": 2,
+    "column": 32
+  },
+  {
+    "type": "BACKSLASH",
+    "literal": "\\",
+    "line": 2,
+    "column": 35
+  },
+  {
+    "type": "DOUBLE_QUOTE",
+    "literal": "\"",
+    "line": 2,
+    "column": 36
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "l",
+    "line": 2,
+    "column": 37
+  },
+  {
+    "type": "BACKSLASH",
+    "literal": "\\",
+    "line": 2,
+    "column": 38
+  },
+  {
+    "type": "DOUBLE_QUOTE",
+    "literal": "\"",
+    "line": 2,
+    "column": 39
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "o",
+    "line": 2,
+    "column": 40
+  },
+  {
+    "type": "DOUBLE_QUOTE",
+    "literal": "\"",
+    "line": 2,
+    "column": 41
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo_bar",
+    "line": 3,
+    "column": 43
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 3,
+    "column": 50
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Klass",
+    "line": 3,
+    "column": 52
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 3,
+    "column": 58
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Klass",
+    "line": 3,
+    "column": 60
+  },
+  {
+    "type": "DOT",
+    "literal": ".",
+    "line": 3,
+    "column": 65
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "new",
+    "line": 3,
+    "column": 66
+  },
+  {
+    "type": "LPAREN",
+    "literal": "(",
+    "line": 3,
+    "column": 69
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo",
+    "line": 3,
+    "column": 70
+  },
+  {
+    "type": "COMMA",
+    "literal": ",",
+    "line": 3,
+    "column": 73
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "bar",
+    "line": 3,
+    "column": 75
+  },
+  {
+    "type": "RPAREN",
+    "literal": ")",
+    "line": 3,
+    "column": 78
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "greeted_n_times",
+    "line": 4,
+    "column": 80
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 4,
+    "column": 95
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Float",
+    "line": 4,
+    "column": 97
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 4,
+    "column": 103
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo_bar",
+    "line": 4,
+    "column": 105
+  },
+  {
+    "type": "DOT",
+    "literal": ".",
+    "line": 4,
+    "column": 112
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "greet",
+    "line": 4,
+    "column": 113
+  },
+  {
+    "type": "EOF",
+    "literal": null,
+    "line": 1,
+    "column": 118
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "type": "IDENTIFIER",
+    "literal": "def",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "greet",
+    "line": 1,
+    "column": 4
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 1,
+    "column": 9
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Float",
+    "line": 1,
+    "column": 11
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "foo",
+    "line": 2,
+    "column": 19
+  },
+  {
+    "type": "DOT",
+    "literal": ".",
+    "line": 2,
+    "column": 22
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "times",
+    "line": 2,
+    "column": 23
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "do",
+    "line": 2,
+    "column": 29
+  },
+  {
+    "type": "PIPE",
+    "literal": "|",
+    "line": 2,
+    "column": 32
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "i",
+    "line": 2,
+    "column": 33
+  },
+  {
+    "type": "PIPE",
+    "literal": "|",
+    "line": 2,
+    "column": 34
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "puts",
+    "line": 3,
+    "column": 40
+  },
+  {
+    "type": "DOUBLE_QUOTE",
+    "literal": "\"",
+    "line": 3,
+    "column": 45
+  },
+  {
+    "type": "HASH",
+    "literal": "#",
+    "line": 3,
+    "column": 46
+  },
+  {
+    "type": "LBRACE",
+    "literal": "{",
+    "line": 3,
+    "column": 47
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "bar",
+    "line": 3,
+    "column": 48
+  },
+  {
+    "type": "RBRACE",
+    "literal": "}",
+    "line": 3,
+    "column": 51
+  },
+  {
+    "type": "HASH",
+    "literal": "#",
+    "line": 3,
+    "column": 53
+  },
+  {
+    "type": "LBRACE",
+    "literal": "{",
+    "line": 3,
+    "column": 54
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "i",
+    "line": 3,
+    "column": 55
+  },
+  {
+    "type": "RBRACE",
+    "literal": "}",
+    "line": 3,
+    "column": 56
+  },
+  {
+    "type": "DOUBLE_QUOTE",
+    "literal": "\"",
+    "line": 3,
+    "column": 57
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "end",
+    "line": 4,
+    "column": 61
+  },
+  {
+    "type": "NUMBER",
+    "literal": "56.78",
+    "line": 6,
+    "column": 68
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "end",
+    "line": 7,
+    "column": 74
+  },
+  {
+    "type": "EOF",
+    "literal": null,
+    "line": 1,
+    "column": 77
+  }
+]
