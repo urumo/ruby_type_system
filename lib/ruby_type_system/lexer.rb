@@ -14,15 +14,18 @@ module RubyTypeSystem
     def tokenize
       i = 0
       line = 1
+      inside_string = false
+      string_single_quote = false
       while i < code.size
         char = code[i]
-        # if inside_string
-        #   start = i
-        #   i += 1 while code[i] != '"' || (code[i] == '"' && code[i - 1] == "\\")
-        #   tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
-        #   inside_string = false
-        #   i += 1
-        # end
+        if inside_string
+          start = i
+          quote = string_single_quote ? "'" : '"'
+          i += 1 while code[i] != quote || (code[i] == quote && code[i - 1] == "\\")
+          tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
+          inside_string = false
+          i += 1
+        end
         case char
         when "\n"
           line += 1
@@ -31,7 +34,7 @@ module RubyTypeSystem
           start = i
           i += 1 while code[i] =~ /[[:word:]]/
           token = code[start...i]
-          tokens << Token.new(::RubyTypeSystem::TokenType::IDENTIFIER, token, line, start)
+          tokens << Token.new(::RubyTypeSystem::TokenType::IDENTIFIER, token, line, start) if token.size.positive?
         when ":"
           tokens << Token.new(::RubyTypeSystem::TokenType::COLON, char, line, i)
           i += 1
@@ -55,11 +58,13 @@ module RubyTypeSystem
           end
           i += 1
         when '"'
-          tokens << Token.new(::RubyTypeSystem::TokenType::DOUBLE_QUOTE, char, line, i)
-          # inside_string = true
+          # tokens << Token.new(::RubyTypeSystem::TokenType::DOUBLE_QUOTE, char, line, i)
+          inside_string = true
           i += 1
         when "'"
-          tokens << Token.new(::RubyTypeSystem::TokenType::SINGLE_QUOTE, char, line, i)
+          inside_string = true
+          string_single_quote = true
+          # tokens << Token.new(::RubyTypeSystem::TokenType::SINGLE_QUOTE, char, line, i)
           i += 1
         when "+"
           if code[i + 1] == "="
@@ -94,7 +99,7 @@ module RubyTypeSystem
           end
           i += 1
         when "#"
-          tokens << Token.new(::RubyTypeSystem::TokenType::HASH, char, line, i)
+        #   tokens << Token.new(::RubyTypeSystem::TokenType::HASH, char, line, i)
           i += 1
         when "\\"
           tokens << Token.new(::RubyTypeSystem::TokenType::BACKSLASH, char, line, i)

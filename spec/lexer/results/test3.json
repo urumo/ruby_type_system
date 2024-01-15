@@ -54,58 +54,10 @@
     "column": 29
   },
   {
-    "type": "DOUBLE_QUOTE",
-    "literal": "\"",
-    "line": 2,
-    "column": 31
-  },
-  {
-    "type": "IDENTIFIER",
-    "literal": "hel",
+    "type": "STRING",
+    "literal": "hel\\\"l\\\"o",
     "line": 2,
     "column": 32
-  },
-  {
-    "type": "BACKSLASH",
-    "literal": "\\",
-    "line": 2,
-    "column": 35
-  },
-  {
-    "type": "DOUBLE_QUOTE",
-    "literal": "\"",
-    "line": 2,
-    "column": 36
-  },
-  {
-    "type": "IDENTIFIER",
-    "literal": "l",
-    "line": 2,
-    "column": 37
-  },
-  {
-    "type": "BACKSLASH",
-    "literal": "\\",
-    "line": 2,
-    "column": 38
-  },
-  {
-    "type": "DOUBLE_QUOTE",
-    "literal": "\"",
-    "line": 2,
-    "column": 39
-  },
-  {
-    "type": "IDENTIFIER",
-    "literal": "o",
-    "line": 2,
-    "column": 40
-  },
-  {
-    "type": "DOUBLE_QUOTE",
-    "literal": "\"",
-    "line": 2,
-    "column": 41
   },
   {
     "type": "IDENTIFIER",
