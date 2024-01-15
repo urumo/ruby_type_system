@@ -8,7 +8,6 @@ RSpec.describe RubyTypeSystem do
     let(:result_path) { File.join(File.dirname(__FILE__), "lexer/results") }
     let(:tests) { Dir.entries(test_path).reject { |f| File.directory? f } }
     it "has tests to pass" do
-      pp tests
       expect(tests).not_to be_empty
     end
 

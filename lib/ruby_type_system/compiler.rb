@@ -3,6 +3,7 @@
 module RubyTypeSystem
 
   class CompilerError < StandardError; end
+
   class Compiler
     attr_reader :code, :output
 
@@ -34,7 +35,7 @@ module RubyTypeSystem
       @variables.each do |name, data|
         @output += "#{name}= #{data[:value]}\n"
         @output += "raise TypeError, \"Expected type #{data[:type]}, got #{name}.class\" unless " \
-                   "#{name}.is_a?(#{data[:type]})\n"
+          "#{name}.is_a?(#{data[:type]})\n"
       end
     end
 
