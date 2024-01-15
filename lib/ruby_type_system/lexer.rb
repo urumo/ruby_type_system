@@ -21,15 +21,23 @@ module RubyTypeSystem
     def tokenize
       i = 0
       line = 1
+      inside_string = false
       while i < code.size
         char = code[i]
+        if inside_string
+          start = i
+          i += 1 while code[i] != '"' || (code[i] == '"' && code[i - 1] == "\\")
+          tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
+          inside_string = false
+          i += 1
+        end
         case char
         when "\n"
           line += 1
           i += 1
-        when '@'
+        when "@"
           start = i
-          is_class_var = code[i + 1] == '@'
+          is_class_var = code[i + 1] == "@"
           i += is_class_var ? 2 : 1
           i += 1 while code[i] =~ /[[:word:]]/
           type = is_class_var ? ::RubyTypeSystem::TokenType::CLASS_VAR : ::RubyTypeSystem::TokenType::INSTANCE_VAR
@@ -40,36 +48,30 @@ module RubyTypeSystem
           token = code[start...i]
           type = check_type_or_keyword(token)
           tokens << Token.new(type, token, line, start)
-        when ':'
+        when ":"
           tokens << Token.new(::RubyTypeSystem::TokenType::COLON, char, line, i)
           i += 1
         when /[[:digit:]]/
           start = i
           i += 1 while code[i] =~ /[[:digit:]]/
-          if code[i] == '.' && code[i + 1] =~ /[[:digit:]]/
+          if code[i] == "." && code[i + 1] =~ /[[:digit:]]/
             i += 1
             i += 1 while code[i] =~ /[[:digit:]]/
             tokens << Token.new(::RubyTypeSystem::TokenType::FLOAT, code[start...i].strip, line, start)
           else
             tokens << Token.new(::RubyTypeSystem::TokenType::INTEGER, code[start...i].strip, line, start)
           end
-        when '='
+        when "="
           tokens << Token.new(::RubyTypeSystem::TokenType::ASSIGN, char, line, i)
           i += 1
         when '"'
-          start = i
+          inside_string = true
           i += 1
-          while code[i] != '"'
-            if code[i] == '\\'
-              i += 2
-            elsif code[i] == '#' && code[i + 1] == '{'
-              i += 1 while code[i] != '}'
-            end
-            i += 1
-          end
-          i += 1
-          tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
-
+          # start = i
+          # i += 1
+          # i += 1 while code[i] != '"' || (code[i] == '"' && code[i - 1] == '\\')
+          # i += 1
+          # tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
         else
           i += 1
         end

@@ -3,7 +3,16 @@
 module RubyTypeSystem
   class TokenError < StandardError; end
 
-  Token = Struct.new(:type, :literal, :line, :column)
+  Token = Struct.new(:type, :literal, :line, :column) do
+    def to_hash
+      {
+        type: type,
+        literal: literal,
+        line: line,
+        column: column
+      }
+    end
+  end
   module TokenType
     EOF = :EOF
     IDENTIFIER = :IDENTIFIER
