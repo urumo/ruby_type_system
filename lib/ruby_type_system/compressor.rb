@@ -18,7 +18,8 @@ module RubyTypeSystem
         # frozen_string_literal: true
       RUBY
       compressed_code = program_begin + process_file(file_path)
-      File.write("dist/compressed.rb", compressed_code)
+      File.write("dist/compressed.rb", compressed_code) # for debugging
+      compressed_code
     end
 
     private

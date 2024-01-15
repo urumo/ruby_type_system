@@ -3,4 +3,4 @@
 
 require_relative "../lib/ruby_type_system"
 
-RubyTypeSystem.compress ARGV[0]
+RubyTypeSystem.process ARGV[0]
