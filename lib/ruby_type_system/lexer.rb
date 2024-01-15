@@ -128,7 +128,15 @@ module RubyTypeSystem
           tokens << Token.new(::RubyTypeSystem::TokenType::COMMA, char, line, i)
           i += 1
         when "."
-          tokens << Token.new(::RubyTypeSystem::TokenType::DOT, char, line, i)
+          if code[i + 1] == "." && code[i + 2] == "."
+            tokens << Token.new(::RubyTypeSystem::TokenType::ELLIPSIS, "...", line, i)
+            i += 2
+          elsif code[i + 1] == "."
+            tokens << Token.new(::RubyTypeSystem::TokenType::RANGE, "..", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::DOT, char, line, i)
+          end
           i += 1
         when ";"
           tokens << Token.new(::RubyTypeSystem::TokenType::SEMICOLON, char, line, i)

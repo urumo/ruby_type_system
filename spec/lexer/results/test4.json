@@ -1,0 +1,188 @@
+[
+  {
+    "type": "IDENTIFIER",
+    "literal": "arr",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "COLON",
+    "literal": ":",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Array",
+    "line": 1,
+    "column": 5
+  },
+  {
+    "type": "LBRACKET",
+    "literal": "[",
+    "line": 1,
+    "column": 10
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "Integer",
+    "line": 1,
+    "column": 11
+  },
+  {
+    "type": "RBRACKET",
+    "literal": "]",
+    "line": 1,
+    "column": 18
+  },
+  {
+    "type": "ASSIGN",
+    "literal": "=",
+    "line": 1,
+    "column": 20
+  },
+  {
+    "type": "LBRACKET",
+    "literal": "[",
+    "line": 1,
+    "column": 22
+  },
+  {
+    "type": "NUMBER",
+    "literal": "1,",
+    "line": 1,
+    "column": 23
+  },
+  {
+    "type": "COMMA",
+    "literal": ",",
+    "line": 1,
+    "column": 24
+  },
+  {
+    "type": "NUMBER",
+    "literal": "2,",
+    "line": 1,
+    "column": 25
+  },
+  {
+    "type": "COMMA",
+    "literal": ",",
+    "line": 1,
+    "column": 26
+  },
+  {
+    "type": "NUMBER",
+    "literal": "3,",
+    "line": 1,
+    "column": 27
+  },
+  {
+    "type": "COMMA",
+    "literal": ",",
+    "line": 1,
+    "column": 28
+  },
+  {
+    "type": "NUMBER",
+    "literal": "4,",
+    "line": 1,
+    "column": 29
+  },
+  {
+    "type": "COMMA",
+    "literal": ",",
+    "line": 1,
+    "column": 30
+  },
+  {
+    "type": "NUMBER",
+    "literal": "5]",
+    "line": 1,
+    "column": 31
+  },
+  {
+    "type": "RBRACKET",
+    "literal": "]",
+    "line": 1,
+    "column": 32
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "arr",
+    "line": 2,
+    "column": 34
+  },
+  {
+    "type": "LBRACKET",
+    "literal": "[",
+    "line": 2,
+    "column": 37
+  },
+  {
+    "type": "NUMBER",
+    "literal": "0.",
+    "line": 2,
+    "column": 38
+  },
+  {
+    "type": "RANGE",
+    "literal": "..",
+    "line": 2,
+    "column": 39
+  },
+  {
+    "type": "NUMBER",
+    "literal": "4]",
+    "line": 2,
+    "column": 41
+  },
+  {
+    "type": "RBRACKET",
+    "literal": "]",
+    "line": 2,
+    "column": 42
+  },
+  {
+    "type": "IDENTIFIER",
+    "literal": "arr",
+    "line": 3,
+    "column": 44
+  },
+  {
+    "type": "LBRACKET",
+    "literal": "[",
+    "line": 3,
+    "column": 47
+  },
+  {
+    "type": "NUMBER",
+    "literal": "0.",
+    "line": 3,
+    "column": 48
+  },
+  {
+    "type": "ELLIPSIS",
+    "literal": "...",
+    "line": 3,
+    "column": 49
+  },
+  {
+    "type": "NUMBER",
+    "literal": "3]",
+    "line": 3,
+    "column": 52
+  },
+  {
+    "type": "RBRACKET",
+    "literal": "]",
+    "line": 3,
+    "column": 53
+  },
+  {
+    "type": "EOF",
+    "literal": null,
+    "line": 1,
+    "column": 54
+  }
+]
