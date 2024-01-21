@@ -1,0 +1,548 @@
+[
+  {
+    "type": "require",
+    "literal": "require",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "string",
+    "literal": "'some_gem'",
+    "line": 1,
+    "column": 8
+  },
+  {
+    "type": "class",
+    "literal": "class",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "identifier",
+    "literal": "TestClass",
+    "line": 3,
+    "column": 26
+  },
+  {
+    "type": "include",
+    "literal": "include",
+    "line": 4,
+    "column": 38
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeGem",
+    "line": 4,
+    "column": 46
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 4,
+    "column": 53
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 4,
+    "column": 54
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeModule",
+    "line": 4,
+    "column": 55
+  },
+  {
+    "type": "extend",
+    "literal": "extend",
+    "line": 5,
+    "column": 68
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeGem",
+    "line": 5,
+    "column": 75
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 5,
+    "column": 82
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 5,
+    "column": 83
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeModule2",
+    "line": 5,
+    "column": 84
+  },
+  {
+    "type": "identifier",
+    "literal": "attr_reader",
+    "line": 7,
+    "column": 99
+  },
+  {
+    "type": "identifier",
+    "literal": "attr1",
+    "line": 7,
+    "column": 111
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 7,
+    "column": 116
+  },
+  {
+    "type": "identifier",
+    "literal": "Integer",
+    "line": 7,
+    "column": 118
+  },
+  {
+    "type": "comma",
+    "literal": ",",
+    "line": 7,
+    "column": 125
+  },
+  {
+    "type": "identifier",
+    "literal": "attr2",
+    "line": 7,
+    "column": 127
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 7,
+    "column": 132
+  },
+  {
+    "type": "identifier",
+    "literal": "String",
+    "line": 7,
+    "column": 134
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 9,
+    "column": 144
+  },
+  {
+    "type": "identifier",
+    "literal": "initialize",
+    "line": 9,
+    "column": 148
+  },
+  {
+    "type": "lparen",
+    "literal": "(",
+    "line": 9,
+    "column": 158
+  },
+  {
+    "type": "identifier",
+    "literal": "attr1",
+    "line": 9,
+    "column": 159
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 9,
+    "column": 164
+  },
+  {
+    "type": "identifier",
+    "literal": "Integer",
+    "line": 9,
+    "column": 166
+  },
+  {
+    "type": "comma",
+    "literal": ",",
+    "line": 9,
+    "column": 173
+  },
+  {
+    "type": "identifier",
+    "literal": "attr2",
+    "line": 9,
+    "column": 175
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 9,
+    "column": 180
+  },
+  {
+    "type": "identifier",
+    "literal": "String",
+    "line": 9,
+    "column": 182
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 9,
+    "column": 188
+  },
+  {
+    "type": "at",
+    "literal": "@",
+    "line": 10,
+    "column": 194
+  },
+  {
+    "type": "identifier",
+    "literal": "attr1",
+    "line": 10,
+    "column": 195
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 10,
+    "column": 201
+  },
+  {
+    "type": "identifier",
+    "literal": "attr1",
+    "line": 10,
+    "column": 203
+  },
+  {
+    "type": "at",
+    "literal": "@",
+    "line": 11,
+    "column": 213
+  },
+  {
+    "type": "identifier",
+    "literal": "attr2",
+    "line": 11,
+    "column": 214
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 11,
+    "column": 220
+  },
+  {
+    "type": "identifier",
+    "literal": "attr2",
+    "line": 11,
+    "column": 222
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 12,
+    "column": 230
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 14,
+    "column": 237
+  },
+  {
+    "type": "identifier",
+    "literal": "do_n_times",
+    "line": 14,
+    "column": 241
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 14,
+    "column": 251
+  },
+  {
+    "type": "identifier",
+    "literal": "String",
+    "line": 14,
+    "column": 253
+  },
+  {
+    "type": "at",
+    "literal": "@",
+    "line": 15,
+    "column": 264
+  },
+  {
+    "type": "identifier",
+    "literal": "attr1",
+    "line": 15,
+    "column": 265
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 15,
+    "column": 270
+  },
+  {
+    "type": "identifier",
+    "literal": "times",
+    "line": 15,
+    "column": 271
+  },
+  {
+    "type": "do",
+    "literal": "do",
+    "line": 15,
+    "column": 277
+  },
+  {
+    "type": "puts",
+    "literal": "puts",
+    "line": 16,
+    "column": 286
+  },
+  {
+    "type": "string",
+    "literal": "\"<>?/1234567890!@#$%^&*()_+-= #{@attr2} []{}'\\\"\"",
+    "line": 16,
+    "column": 291
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 17,
+    "column": 344
+  },
+  {
+    "type": "string",
+    "literal": "\"ran #{@attr1} times\"",
+    "line": 19,
+    "column": 353
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 20,
+    "column": 377
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 21,
+    "column": 381
+  },
+  {
+    "type": "identifier",
+    "literal": "runner",
+    "line": 25,
+    "column": 420
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 25,
+    "column": 426
+  },
+  {
+    "type": "identifier",
+    "literal": "TestCase",
+    "line": 25,
+    "column": 428
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 25,
+    "column": 437
+  },
+  {
+    "type": "identifier",
+    "literal": "TestCase",
+    "line": 25,
+    "column": 439
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 25,
+    "column": 447
+  },
+  {
+    "type": "identifier",
+    "literal": "new",
+    "line": 25,
+    "column": 448
+  },
+  {
+    "type": "lparen",
+    "literal": "(",
+    "line": 25,
+    "column": 451
+  },
+  {
+    "type": "number",
+    "literal": "5",
+    "line": 25,
+    "column": 452
+  },
+  {
+    "type": "comma",
+    "literal": ",",
+    "line": 25,
+    "column": 453
+  },
+  {
+    "type": "string",
+    "literal": "\"hello\"",
+    "line": 25,
+    "column": 455
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 25,
+    "column": 462
+  },
+  {
+    "type": "identifier",
+    "literal": "runner2",
+    "line": 26,
+    "column": 464
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 26,
+    "column": 472
+  },
+  {
+    "type": "identifier",
+    "literal": "TestCase",
+    "line": 26,
+    "column": 474
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 26,
+    "column": 482
+  },
+  {
+    "type": "identifier",
+    "literal": "new",
+    "line": 26,
+    "column": 483
+  },
+  {
+    "type": "lparen",
+    "literal": "(",
+    "line": 26,
+    "column": 486
+  },
+  {
+    "type": "number",
+    "literal": "5",
+    "line": 26,
+    "column": 487
+  },
+  {
+    "type": "comma",
+    "literal": ",",
+    "line": 26,
+    "column": 488
+  },
+  {
+    "type": "string",
+    "literal": "\"hello\"",
+    "line": 26,
+    "column": 490
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 26,
+    "column": 497
+  },
+  {
+    "type": "identifier",
+    "literal": "val",
+    "line": 27,
+    "column": 516
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 27,
+    "column": 519
+  },
+  {
+    "type": "identifier",
+    "literal": "String",
+    "line": 27,
+    "column": 521
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 27,
+    "column": 528
+  },
+  {
+    "type": "identifier",
+    "literal": "runner",
+    "line": 27,
+    "column": 530
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 27,
+    "column": 536
+  },
+  {
+    "type": "identifier",
+    "literal": "do_n_times",
+    "line": 27,
+    "column": 537
+  },
+  {
+    "type": "identifier",
+    "literal": "val2",
+    "line": 28,
+    "column": 548
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 28,
+    "column": 553
+  },
+  {
+    "type": "identifier",
+    "literal": "runner2",
+    "line": 28,
+    "column": 555
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 28,
+    "column": 562
+  },
+  {
+    "type": "identifier",
+    "literal": "do_n_times",
+    "line": 28,
+    "column": 563
+  }
+]

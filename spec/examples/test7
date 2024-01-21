@@ -1,0 +1,28 @@
+require 'some_gem'
+
+class TestClass
+  include SomeGem::SomeModule
+  extend SomeGem::SomeModule2
+
+  attr_reader attr1: Integer, attr2: String
+
+  def initialize(attr1: Integer, attr2: String)
+    @attr1 = attr1
+    @attr2 = attr2
+  end
+
+  def do_n_times: String
+    @attr1.times do
+      puts "<>?/1234567890!@#$%^&*()_+-= #{@attr2} []{}'\""
+    end
+
+    "ran #{@attr1} times"
+  end
+end
+
+# this comment should be skipped
+
+runner: TestCase = TestCase.new(5, "hello")
+runner2 = TestCase.new(5, "hello") # type inference
+val: String = runner.do_n_times
+val2 = runner2.do_n_times # type inference

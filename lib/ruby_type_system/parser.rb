@@ -40,13 +40,10 @@ module RubyTypeSystem
 
     def initialize(lexer)
       @tokens = lexer.tokens
-      @current_token = tokens.shift
+      @current_token = tokens.deq
       @ast = Ast.new(::RubyTypeSystem::AstTypes::PROGRAM, nil, [])
     end
 
-    def parse
-      while current_token.type != ::RubyTypeSystem::TokenType::EOF
-      end
-    end
+    def parse; end
   end
 end

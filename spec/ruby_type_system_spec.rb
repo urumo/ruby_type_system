@@ -36,8 +36,8 @@ RSpec.describe RubyTypeSystem do
     it "passes tests from examples folder" do
       tests.each do |test_case|
         code = File.read(File.join(test_path, test_case))
-        parser = RubyTypeSystem.parse(code)
-        pp parser
+        RubyTypeSystem.parse(code)
+        # pp parser
         # pp parser.ast
         # json = JSON.parse(File.read(File.join(result_path, "#{test_case}.json")), symbolize_names: true)
         # expect(parser.ast.to_hash).to eq(json)

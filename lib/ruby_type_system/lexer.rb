@@ -88,8 +88,7 @@ module RubyTypeSystem
           end
           i += 1
         when "#"
-          #   tokens << Token.new(::RubyTypeSystem::TokenType::HASH, char, line, i)
-          i += 1
+          i += 1 while code[i] != "\n" && i <= code.size
         when "\\"
           tokens << Token.new(::RubyTypeSystem::TokenType::BACKSLASH, char, line, i)
           i += 1
