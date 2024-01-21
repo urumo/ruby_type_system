@@ -1,6 +1,6 @@
 [
   {
-    "type": "identifier",
+    "type": "class",
     "literal": "class",
     "line": 1,
     "column": 0
@@ -12,7 +12,7 @@
     "column": 6
   },
   {
-    "type": "identifier",
+    "type": "def",
     "literal": "def",
     "line": 2,
     "column": 14
@@ -102,13 +102,13 @@
     "column": 69
   },
   {
-    "type": "identifier",
+    "type": "end",
     "literal": "end",
     "line": 5,
     "column": 77
   },
   {
-    "type": "identifier",
+    "type": "end",
     "literal": "end",
     "line": 6,
     "column": 81

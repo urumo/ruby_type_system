@@ -34,7 +34,7 @@ module RubyTypeSystem
           start = i
           i += 1 while code[i] =~ /[[:word:]]/
           token = code[start...i]
-          tokens << Token.new(::RubyTypeSystem::TokenType::IDENTIFIER, token, line, start) if token.size.positive?
+          tokens << Token.new(::RubyTypeSystem.check_type_or_keyword(token), token, line, start) if token.size.positive?
         when ":"
           tokens << Token.new(::RubyTypeSystem::TokenType::COLON, char, line, i)
           i += 1
@@ -58,13 +58,11 @@ module RubyTypeSystem
           end
           i += 1
         when '"'
-          # tokens << Token.new(::RubyTypeSystem::TokenType::DOUBLE_QUOTE, char, line, i)
           inside_string = true
           i += 1
         when "'"
           inside_string = true
           string_single_quote = true
-          # tokens << Token.new(::RubyTypeSystem::TokenType::SINGLE_QUOTE, char, line, i)
           i += 1
         when "+"
           if code[i + 1] == "="
