@@ -120,7 +120,7 @@
     "column": 289
   },
   {
-    "type": "identifier",
+    "type": "extend",
     "literal": "extend",
     "line": 13,
     "column": 301

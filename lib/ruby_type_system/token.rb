@@ -7,7 +7,7 @@ module RubyTypeSystem
                 module next nil not or redo rescue retry return self super then true undef unless until when
                 while yield].freeze
 
-  BUILTINS = %w[require require_relative load puts print p raise fail abort exit].freeze
+  BUILTINS = %w[require require_relative load puts print p raise fail abort exit include extend prepend].freeze
 
   TYPES = %w[Numeric Integer Float String Hash Array Set Symbol Range Regexp Proc IO File Time
              TrueClass FalseClass NilClass Object Class Module Method Struct Expression].freeze
@@ -92,6 +92,9 @@ module RubyTypeSystem
     FAIL = :fail
     ABORT = :abort
     EXIT = :exit
+    INCLUDE = :include
+    EXTEND = :extend
+    PREPEND = :prepend
   end
 
   module Keywords
@@ -165,6 +168,12 @@ module RubyTypeSystem
         ::RubyTypeSystem::Builtins::ABORT
       when BUILTINS[9]
         ::RubyTypeSystem::Builtins::EXIT
+      when BUILTINS[10]
+        ::RubyTypeSystem::Builtins::INCLUDE
+      when BUILTINS[11]
+        ::RubyTypeSystem::Builtins::EXTEND
+      when BUILTINS[12]
+        ::RubyTypeSystem::Builtins::PREPEND
       else
         raise LexerError, "Unknown builtin #{token}"
       end
