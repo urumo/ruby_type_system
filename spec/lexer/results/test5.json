@@ -1,0 +1,146 @@
+[
+  {
+    "type": "require",
+    "literal": "require",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "string",
+    "literal": "'some_gem'",
+    "line": 1,
+    "column": 8
+  },
+  {
+    "type": "require_relative",
+    "literal": "require_relative",
+    "line": 2,
+    "column": 19
+  },
+  {
+    "type": "string",
+    "literal": "'./local_file.rb'",
+    "line": 2,
+    "column": 36
+  },
+  {
+    "type": "load",
+    "literal": "load",
+    "line": 3,
+    "column": 54
+  },
+  {
+    "type": "string",
+    "literal": "'./local_file2.rb'",
+    "line": 3,
+    "column": 59
+  },
+  {
+    "type": "module",
+    "literal": "module",
+    "line": 5,
+    "column": 79
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeModule",
+    "line": 5,
+    "column": 86
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 6,
+    "column": 99
+  },
+  {
+    "type": "self",
+    "literal": "self",
+    "line": 6,
+    "column": 103
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 6,
+    "column": 107
+  },
+  {
+    "type": "identifier",
+    "literal": "some_method",
+    "line": 6,
+    "column": 108
+  },
+  {
+    "type": "puts",
+    "literal": "puts",
+    "line": 7,
+    "column": 124
+  },
+  {
+    "type": "string",
+    "literal": "'<>!@#[]{}@@@!@#<>!@#[]{}@@@!@#<>!@\\'\"#[]{}@@@!@#<>!@#[]{}@@@!@#<'",
+    "line": 7,
+    "column": 129
+  },
+  {
+    "type": "puts",
+    "literal": "puts",
+    "line": 8,
+    "column": 200
+  },
+  {
+    "type": "string",
+    "literal": "\"<>!@#[]{}@@@!@#<>!@#[]{}@@@!@#<>!@#\\\"'[]{}@@@!@#<>!@#[]{}@@@!@#<\"",
+    "line": 8,
+    "column": 205
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 9,
+    "column": 274
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 10,
+    "column": 278
+  },
+  {
+    "type": "class",
+    "literal": "class",
+    "line": 12,
+    "column": 283
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeClass",
+    "line": 12,
+    "column": 289
+  },
+  {
+    "type": "identifier",
+    "literal": "extend",
+    "line": 13,
+    "column": 301
+  },
+  {
+    "type": "identifier",
+    "literal": "SomeModule",
+    "line": 13,
+    "column": 308
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 14,
+    "column": 319
+  },
+  {
+    "type": "eof",
+    "literal": null,
+    "line": 1,
+    "column": 322
+  }
+]

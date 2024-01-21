@@ -8,24 +8,14 @@ module RubyTypeSystem
 
     def initialize(code)
       @code = code.chomp
-      @tokens = []
+      @tokens = Queue.new
     end
 
     def tokenize
       i = 0
       line = 1
-      inside_string = false
-      string_single_quote = false
       while i < code.size
         char = code[i]
-        if inside_string
-          start = i
-          quote = string_single_quote ? "'" : '"'
-          i += 1 while code[i] != quote || (code[i] == quote && code[i - 1] == "\\")
-          tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...i], line, start)
-          inside_string = false
-          i += 1
-        end
         case char
         when "\n"
           line += 1
@@ -57,13 +47,8 @@ module RubyTypeSystem
             tokens << Token.new(::RubyTypeSystem::TokenType::ASSIGN, char, line, i)
           end
           i += 1
-        when '"'
-          inside_string = true
-          i += 1
-        when "'"
-          inside_string = true
-          string_single_quote = true
-          i += 1
+        when '"', "'"
+          i = tokenize_string(i, char, line)
         when "+"
           if code[i + 1] == "="
             tokens << Token.new(::RubyTypeSystem::TokenType::PLUS_EQUAL, "+=", line, i)
@@ -97,7 +82,7 @@ module RubyTypeSystem
           end
           i += 1
         when "#"
-        #   tokens << Token.new(::RubyTypeSystem::TokenType::HASH, char, line, i)
+          #   tokens << Token.new(::RubyTypeSystem::TokenType::HASH, char, line, i)
           i += 1
         when "\\"
           tokens << Token.new(::RubyTypeSystem::TokenType::BACKSLASH, char, line, i)
@@ -184,12 +169,24 @@ module RubyTypeSystem
         when " "
           i += 1
         else
-          raise LexerError, "Unknown character #{char}"
+          # raise LexerError, "Unknown character #{char}"
+          puts char
           i += 1
         end
 
         tokens << Token.new(::RubyTypeSystem::TokenType::EOF, nil, 1, i) if i == code.size
       end
+    end
+
+    private
+
+    def tokenize_string(index, quote, line)
+      start = index
+      index += 1
+      index += 1 while code[index] != quote || (code[index] == quote && code[index - 1] == "\\")
+      index += 1
+      tokens << Token.new(::RubyTypeSystem::TokenType::STRING, code[start...index], line, start)
+      index
     end
   end
 end

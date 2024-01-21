@@ -64,6 +64,7 @@ module RubyTypeSystem
     CARET = :caret
     EOF = :eof
   end
+
   module Builtins
     REQUIRE = :require
     REQUIRE_RELATIVE = :require_relative
@@ -76,6 +77,7 @@ module RubyTypeSystem
     ABORT = :abort
     EXIT = :exit
   end
+
   module Keywords
     BEGIN_CAPITAL = :begin_capital
     END_CAPITAL = :end_capital
@@ -92,7 +94,7 @@ module RubyTypeSystem
     ELSIF = :elsif
     END_T = :end
     ENSURE = :ensure
-    FALSE = :false
+    FALSE = false
     FOR = :for
     IF = :if
     IN = :in
@@ -108,7 +110,7 @@ module RubyTypeSystem
     SELF = :self
     SUPER = :super
     THEN = :then
-    TRUE = :true
+    TRUE = true
     UNDEF = :undef
     UNLESS = :unless
     UNTIL = :until

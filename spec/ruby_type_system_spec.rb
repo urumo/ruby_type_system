@@ -3,7 +3,7 @@
 require "json"
 
 RSpec.describe RubyTypeSystem do
-  let(:test_path) { File.join(File.dirname(__FILE__), "lexer/examples") }
+  let(:test_path) { File.join(File.dirname(__FILE__), "examples") }
   let(:tests) { Dir.entries(test_path).reject { |f| File.directory? f } }
 
   it "has a version number" do
@@ -21,7 +21,8 @@ RSpec.describe RubyTypeSystem do
         code = File.read(File.join(test_path, test_case))
         lexer = RubyTypeSystem.tokenize(code)
         json = JSON.parse(File.read(File.join(result_path, "#{test_case}.json")), symbolize_names: true)
-        expect(lexer.tokens.map(&:to_hash)).to eq(json)
+        tokens_array = lexer.tokens.size.times.map { lexer.tokens.deq.to_hash }
+        expect(tokens_array).to eq(json)
       end
     end
   end

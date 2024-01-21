@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'expressions/identifier'
+require_relative "expressions/identifier"
 
 module RubyTypeSystem
   module AstTypes
@@ -28,10 +28,11 @@ module RubyTypeSystem
     BOOLEAN = :boolean
     NIL = :nil
     SELF = :self
-    TRUE = :true
-    FALSE = :false
+    TRUE = true
+    FALSE = false
     EXPRESSION = :expression
   end
+
   class ParserError < StandardError; end
 
   class Parser
@@ -47,9 +48,5 @@ module RubyTypeSystem
       while current_token.type != ::RubyTypeSystem::TokenType::EOF
       end
     end
-
-    private
-
   end
 end
-

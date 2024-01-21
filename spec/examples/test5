@@ -1,0 +1,14 @@
+require 'some_gem'
+require_relative './local_file.rb'
+load './local_file2.rb'
+
+module SomeModule
+  def self.some_method
+    puts '<>!@#[]{}@@@!@#<>!@#[]{}@@@!@#<>!@\'"#[]{}@@@!@#<>!@#[]{}@@@!@#<'
+    puts "<>!@#[]{}@@@!@#<>!@#[]{}@@@!@#<>!@#\"'[]{}@@@!@#<>!@#[]{}@@@!@#<"
+  end
+end
+
+class SomeClass
+  extend SomeModule
+end

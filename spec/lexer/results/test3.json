@@ -55,9 +55,9 @@
   },
   {
     "type": "string",
-    "literal": "hel\\\"l\\\"o",
+    "literal": "\"hel\\\"l\\\"o\"",
     "line": 2,
-    "column": 32
+    "column": 31
   },
   {
     "type": "identifier",
