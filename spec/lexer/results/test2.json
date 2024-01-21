@@ -73,7 +73,7 @@
   },
   {
     "type": "STRING",
-    "literal": "#{bar} #{i}",
+    "literal": "#{bar} #{i} () [] {}",
     "line": 3,
     "column": 46
   },
@@ -81,24 +81,24 @@
     "type": "IDENTIFIER",
     "literal": "end",
     "line": 3,
-    "column": 61
+    "column": 70
   },
   {
     "type": "NUMBER",
     "literal": "56.78",
     "line": 5,
-    "column": 68
+    "column": 77
   },
   {
     "type": "IDENTIFIER",
     "literal": "end",
     "line": 6,
-    "column": 74
+    "column": 83
   },
   {
     "type": "EOF",
     "literal": null,
     "line": 1,
-    "column": 77
+    "column": 86
   }
 ]

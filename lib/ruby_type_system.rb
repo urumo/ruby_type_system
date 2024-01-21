@@ -19,7 +19,9 @@ module RubyTypeSystem
     end
 
     def parse(code)
-      Parser.new(tokenize(code)).parse
+      parser = Parser.new(tokenize(code))
+      parser.parse
+      parser
     end
 
     def tokenize(code)

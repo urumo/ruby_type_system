@@ -40,11 +40,11 @@ module RubyTypeSystem
     end
 
     def consume(expected_type)
-      if current_token.type == expected_type
-        @current_token = tokens.shift
-      else
+      unless current_token.type == expected_type
         raise ParserError, "Expected #{expected_type} but got #{current_token.type}"
       end
+
+      @current_token = tokens.shift
     end
   end
 end
