@@ -1,0 +1,548 @@
+[
+  {
+    "type": "identifier",
+    "literal": "arr",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 1,
+    "column": 4
+  },
+  {
+    "type": "lbracket",
+    "literal": "[",
+    "line": 1,
+    "column": 6
+  },
+  {
+    "type": "rbracket",
+    "literal": "]",
+    "line": 1,
+    "column": 7
+  },
+  {
+    "type": "identifier",
+    "literal": "arr",
+    "line": 2,
+    "column": 9
+  },
+  {
+    "type": "left_shift",
+    "literal": "<<",
+    "line": 2,
+    "column": 13
+  },
+  {
+    "type": "number",
+    "literal": "1",
+    "line": 2,
+    "column": 16
+  },
+  {
+    "type": "identifier",
+    "literal": "arr",
+    "line": 3,
+    "column": 18
+  },
+  {
+    "type": "left_shift",
+    "literal": "<<",
+    "line": 3,
+    "column": 22
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 3,
+    "column": 25
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 4,
+    "column": 27
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 4,
+    "column": 29
+  },
+  {
+    "type": "identifier",
+    "literal": "arr",
+    "line": 4,
+    "column": 31
+  },
+  {
+    "type": "lbracket",
+    "literal": "[",
+    "line": 4,
+    "column": 34
+  },
+  {
+    "type": "number",
+    "literal": "1",
+    "line": 4,
+    "column": 35
+  },
+  {
+    "type": "rbracket",
+    "literal": "]",
+    "line": 4,
+    "column": 36
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 5,
+    "column": 38
+  },
+  {
+    "type": "greater_than",
+    "literal": ">",
+    "line": 5,
+    "column": 40
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 5,
+    "column": 42
+  },
+  {
+    "type": "question",
+    "literal": "?",
+    "line": 5,
+    "column": 44
+  },
+  {
+    "type": "identifier",
+    "literal": "arr",
+    "line": 5,
+    "column": 46
+  },
+  {
+    "type": "left_shift",
+    "literal": "<<",
+    "line": 5,
+    "column": 50
+  },
+  {
+    "type": "number",
+    "literal": "3",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 5,
+    "column": 55
+  },
+  {
+    "type": "identifier",
+    "literal": "arr",
+    "line": 5,
+    "column": 57
+  },
+  {
+    "type": "left_shift",
+    "literal": "<<",
+    "line": 5,
+    "column": 61
+  },
+  {
+    "type": "number",
+    "literal": "4",
+    "line": 5,
+    "column": 64
+  },
+  {
+    "type": "number",
+    "literal": "1",
+    "line": 8,
+    "column": 68
+  },
+  {
+    "type": "not_equal",
+    "literal": "!=",
+    "line": 8,
+    "column": 70
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 8,
+    "column": 73
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 9,
+    "column": 75
+  },
+  {
+    "type": "equal",
+    "literal": "==",
+    "line": 9,
+    "column": 77
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 9,
+    "column": 80
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 10,
+    "column": 82
+  },
+  {
+    "type": "less_than_or_equal",
+    "literal": "<=",
+    "line": 10,
+    "column": 84
+  },
+  {
+    "type": "number",
+    "literal": "3",
+    "line": 10,
+    "column": 87
+  },
+  {
+    "type": "number",
+    "literal": "3",
+    "line": 11,
+    "column": 89
+  },
+  {
+    "type": "greater_than_or_equal",
+    "literal": ">=",
+    "line": 11,
+    "column": 91
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 11,
+    "column": 94
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 12,
+    "column": 96
+  },
+  {
+    "type": "divide_equal",
+    "literal": "/=",
+    "line": 12,
+    "column": 98
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 12,
+    "column": 101
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 13,
+    "column": 103
+  },
+  {
+    "type": "multiply_equal",
+    "literal": "*=",
+    "line": 13,
+    "column": 105
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 13,
+    "column": 108
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 14,
+    "column": 110
+  },
+  {
+    "type": "plus_equal",
+    "literal": "+=",
+    "line": 14,
+    "column": 112
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 14,
+    "column": 115
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 15,
+    "column": 117
+  },
+  {
+    "type": "minus_equal",
+    "literal": "-=",
+    "line": 15,
+    "column": 119
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 15,
+    "column": 122
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 16,
+    "column": 124
+  },
+  {
+    "type": "modulo_assign",
+    "literal": "%=",
+    "line": 16,
+    "column": 126
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 16,
+    "column": 129
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 17,
+    "column": 131
+  },
+  {
+    "type": "power_assign",
+    "literal": "**=",
+    "line": 17,
+    "column": 133
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 17,
+    "column": 137
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 18,
+    "column": 139
+  },
+  {
+    "type": "or_assign",
+    "literal": "||=",
+    "line": 18,
+    "column": 141
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 18,
+    "column": 145
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 19,
+    "column": 147
+  },
+  {
+    "type": "and_assign",
+    "literal": "&&=",
+    "line": 19,
+    "column": 149
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 19,
+    "column": 153
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 20,
+    "column": 155
+  },
+  {
+    "type": "bitwise_and_assign",
+    "literal": "&=",
+    "line": 20,
+    "column": 157
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 20,
+    "column": 160
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 21,
+    "column": 162
+  },
+  {
+    "type": "bitwise_or_assign",
+    "literal": "|=",
+    "line": 21,
+    "column": 164
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 21,
+    "column": 167
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 22,
+    "column": 169
+  },
+  {
+    "type": "bitwise_xor_assign",
+    "literal": "^=",
+    "line": 22,
+    "column": 171
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 22,
+    "column": 174
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 23,
+    "column": 176
+  },
+  {
+    "type": "left_shift_assign",
+    "literal": "<<=",
+    "line": 23,
+    "column": 178
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 23,
+    "column": 182
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 24,
+    "column": 184
+  },
+  {
+    "type": "right_shift_assign",
+    "literal": ">>=",
+    "line": 24,
+    "column": 186
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 24,
+    "column": 190
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 25,
+    "column": 192
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 25,
+    "column": 194
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 25,
+    "column": 196
+  },
+  {
+    "type": "identifier",
+    "literal": "a",
+    "line": 26,
+    "column": 198
+  },
+  {
+    "type": "equal",
+    "literal": "==",
+    "line": 26,
+    "column": 200
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 26,
+    "column": 203
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 27,
+    "column": 205
+  },
+  {
+    "type": "left_shift",
+    "literal": "<<",
+    "line": 27,
+    "column": 207
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 27,
+    "column": 210
+  },
+  {
+    "type": "number",
+    "literal": "8",
+    "line": 28,
+    "column": 212
+  },
+  {
+    "type": "right_shift",
+    "literal": ">>",
+    "line": 28,
+    "column": 214
+  },
+  {
+    "type": "number",
+    "literal": "2",
+    "line": 28,
+    "column": 217
+  },
+  {
+    "type": "eof",
+    "literal": null,
+    "line": 1,
+    "column": 218
+  }
+]

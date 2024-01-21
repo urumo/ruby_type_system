@@ -35,7 +35,7 @@ module RubyTypeSystem
             i += 1
             i += 1 while code[i] =~ /[[:digit:]]/
           end
-          tokens << Token.new(::RubyTypeSystem::TokenType::NUMBER, code[start..i].strip, line, start)
+          tokens << Token.new(::RubyTypeSystem::TokenType::NUMBER, code[start...i].strip, line, start)
         when "="
           if code[i + 1] == "="
             tokens << Token.new(::RubyTypeSystem::TokenType::EQUAL, "==", line, i)
@@ -68,6 +68,12 @@ module RubyTypeSystem
         when "*"
           if code[i + 1] == "="
             tokens << Token.new(::RubyTypeSystem::TokenType::MULTIPLY_EQUAL, "*=", line, i)
+            i += 1
+          elsif code[i + 1] == "*" && code[i + 2] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::POWER_ASSIGN, "**=", line, i)
+            i += 2
+          elsif code[i + 1] == "*"
+            tokens << Token.new(::RubyTypeSystem::TokenType::POWER, "**", line, i)
             i += 1
           else
             tokens << Token.new(::RubyTypeSystem::TokenType::MULTIPLY, char, line, i)
@@ -123,16 +129,28 @@ module RubyTypeSystem
           tokens << Token.new(::RubyTypeSystem::TokenType::SEMICOLON, char, line, i)
           i += 1
         when "|"
-          if code[i + 1] == "|"
+          if code[i + 1] == "|" && code[i + 2] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::OR_ASSIGN, "||=", line, i)
+            i += 2
+          elsif code[i + 1] == "|"
             tokens << Token.new(::RubyTypeSystem::TokenType::OR, "||", line, i)
+            i += 1
+          elsif code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::BITWISE_OR_ASSIGN, "|=", line, i)
             i += 1
           else
             tokens << Token.new(::RubyTypeSystem::TokenType::PIPE, char, line, i)
           end
           i += 1
         when "&"
-          if code[i + 1] == "&"
+          if code[i + 1] == "&" && code[i + 2] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::AND_ASSIGN, "&&=", line, i)
+            i += 2
+          elsif code[i + 1] == "&"
             tokens << Token.new(::RubyTypeSystem::TokenType::AND, "&&", line, i)
+            i += 1
+          elsif code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::BITWISE_AND_ASSIGN, "&=", line, i)
             i += 1
           else
             tokens << Token.new(::RubyTypeSystem::TokenType::AMPERSAND, char, line, i)
@@ -161,17 +179,54 @@ module RubyTypeSystem
           tokens << Token.new(::RubyTypeSystem::TokenType::DOLLAR, char, line, i)
           i += 1
         when "%"
-          tokens << Token.new(::RubyTypeSystem::TokenType::PERCENT, char, line, i)
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::MODULO_ASSIGN, "%=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::PERCENT, char, line, i)
+          end
           i += 1
         when "^"
-          tokens << Token.new(::RubyTypeSystem::TokenType::CARET, char, line, i)
+          if code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::BITWISE_XOR_ASSIGN, "^=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::CARET, char, line, i)
+          end
+          i += 1
+        when "<"
+
+          if code[i + 1] == "<" && code[i + 2] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::LEFT_SHIFT_ASSIGN, "<<=", line, i)
+            i += 2
+          elsif code[i + 1] == "<"
+            tokens << Token.new(::RubyTypeSystem::TokenType::LEFT_SHIFT, "<<", line, i)
+            i += 1
+          elsif code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::LESS_THAN_OR_EQUAL, "<=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::LESS_THAN, char, line, i)
+          end
+          i += 1
+        when ">"
+          if code[i + 1] == ">" && code[i + 2] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::RIGHT_SHIFT_ASSIGN, ">>=", line, i)
+            i += 2
+          elsif code[i + 1] == ">"
+            tokens << Token.new(::RubyTypeSystem::TokenType::RIGHT_SHIFT, ">>", line, i)
+            i += 1
+          elsif code[i + 1] == "="
+            tokens << Token.new(::RubyTypeSystem::TokenType::GREATER_THAN_OR_EQUAL, ">=", line, i)
+            i += 1
+          else
+            tokens << Token.new(::RubyTypeSystem::TokenType::GREATER_THAN, char, line, i)
+          end
           i += 1
         when " "
           i += 1
         else
-          # raise LexerError, "Unknown character #{char}"
-          puts char
-          i += 1
+          raise LexerError, "Unknown character #{char}"
         end
 
         tokens << Token.new(::RubyTypeSystem::TokenType::EOF, nil, 1, i) if i == code.size

@@ -51,6 +51,7 @@ module RubyTypeSystem
     DOT = :dot
     SEMICOLON = :semicolon
     OR = :or
+    OR_ASSIGN = :or_assign
     PIPE = :pipe
     AND = :and
     AMPERSAND = :ampersand
@@ -62,6 +63,21 @@ module RubyTypeSystem
     DOLLAR = :dollar
     PERCENT = :percent
     CARET = :caret
+    BITWISE_XOR_ASSIGN = :bitwise_xor_assign
+    LESS_THAN_OR_EQUAL = :less_than_or_equal
+    LESS_THAN = :less_than
+    LEFT_SHIFT = :left_shift
+    LEFT_SHIFT_ASSIGN = :left_shift_assign
+    POWER_ASSIGN = :power_assign
+    POWER = :power
+    GREATER_THAN = :greater_than
+    GREATER_THAN_OR_EQUAL = :greater_than_or_equal
+    BITWISE_AND_ASSIGN = :bitwise_and_assign
+    AND_ASSIGN = :and_assign
+    RIGHT_SHIFT = :right_shift
+    RIGHT_SHIFT_ASSIGN = :right_shift_assign
+    MODULO_ASSIGN = :modulo_assign
+    BITWISE_OR_ASSIGN = :bitwise_or_assign
     EOF = :eof
   end
 
