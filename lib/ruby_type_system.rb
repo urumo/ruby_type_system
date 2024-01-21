@@ -7,6 +7,7 @@ require_relative "ruby_type_system/token"
 require_relative "ruby_type_system/compressor"
 require_relative "ruby_type_system/lexer"
 require_relative "ruby_type_system/ast"
+require_relative "ruby_type_system/expressions/expression"
 require_relative "ruby_type_system/parser"
 require_relative "ruby_type_system/compiler"
 

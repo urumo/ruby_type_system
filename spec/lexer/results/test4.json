@@ -1,186 +1,186 @@
 [
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "arr",
     "line": 1,
     "column": 0
   },
   {
-    "type": "COLON",
+    "type": "colon",
     "literal": ":",
     "line": 1,
     "column": 3
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Array",
     "line": 1,
     "column": 5
   },
   {
-    "type": "LBRACKET",
+    "type": "lbracket",
     "literal": "[",
     "line": 1,
     "column": 10
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Integer",
     "line": 1,
     "column": 11
   },
   {
-    "type": "RBRACKET",
+    "type": "rbracket",
     "literal": "]",
     "line": 1,
     "column": 18
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 1,
     "column": 20
   },
   {
-    "type": "LBRACKET",
+    "type": "lbracket",
     "literal": "[",
     "line": 1,
     "column": 22
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "1,",
     "line": 1,
     "column": 23
   },
   {
-    "type": "COMMA",
+    "type": "comma",
     "literal": ",",
     "line": 1,
     "column": 24
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "2,",
     "line": 1,
     "column": 25
   },
   {
-    "type": "COMMA",
+    "type": "comma",
     "literal": ",",
     "line": 1,
     "column": 26
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "3,",
     "line": 1,
     "column": 27
   },
   {
-    "type": "COMMA",
+    "type": "comma",
     "literal": ",",
     "line": 1,
     "column": 28
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "4,",
     "line": 1,
     "column": 29
   },
   {
-    "type": "COMMA",
+    "type": "comma",
     "literal": ",",
     "line": 1,
     "column": 30
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "5]",
     "line": 1,
     "column": 31
   },
   {
-    "type": "RBRACKET",
+    "type": "rbracket",
     "literal": "]",
     "line": 1,
     "column": 32
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "arr",
     "line": 2,
     "column": 34
   },
   {
-    "type": "LBRACKET",
+    "type": "lbracket",
     "literal": "[",
     "line": 2,
     "column": 37
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "0.",
     "line": 2,
     "column": 38
   },
   {
-    "type": "RANGE",
+    "type": "range",
     "literal": "..",
     "line": 2,
     "column": 39
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "4]",
     "line": 2,
     "column": 41
   },
   {
-    "type": "RBRACKET",
+    "type": "rbracket",
     "literal": "]",
     "line": 2,
     "column": 42
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "arr",
     "line": 3,
     "column": 44
   },
   {
-    "type": "LBRACKET",
+    "type": "lbracket",
     "literal": "[",
     "line": 3,
     "column": 47
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "0.",
     "line": 3,
     "column": 48
   },
   {
-    "type": "ELLIPSIS",
+    "type": "elipsis",
     "literal": "...",
     "line": 3,
     "column": 49
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "3]",
     "line": 3,
     "column": 52
   },
   {
-    "type": "RBRACKET",
+    "type": "rbracket",
     "literal": "]",
     "line": 3,
     "column": 53
   },
   {
-    "type": "EOF",
+    "type": "eof",
     "literal": null,
     "line": 1,
     "column": 54

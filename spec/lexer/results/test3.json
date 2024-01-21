@@ -1,180 +1,180 @@
 [
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo",
     "line": 1,
     "column": 0
   },
   {
-    "type": "COLON",
+    "type": "colon",
     "literal": ":",
     "line": 1,
     "column": 3
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Integer",
     "line": 1,
     "column": 5
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 1,
     "column": 13
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "1",
     "line": 1,
     "column": 15
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "bar",
     "line": 2,
     "column": 17
   },
   {
-    "type": "COLON",
+    "type": "colon",
     "literal": ":",
     "line": 2,
     "column": 20
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "String",
     "line": 2,
     "column": 22
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 2,
     "column": 29
   },
   {
-    "type": "STRING",
+    "type": "string",
     "literal": "hel\\\"l\\\"o",
     "line": 2,
     "column": 32
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo_bar",
     "line": 3,
     "column": 43
   },
   {
-    "type": "COLON",
+    "type": "colon",
     "literal": ":",
     "line": 3,
     "column": 50
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Klass",
     "line": 3,
     "column": 52
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 3,
     "column": 58
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Klass",
     "line": 3,
     "column": 60
   },
   {
-    "type": "DOT",
+    "type": "dot",
     "literal": ".",
     "line": 3,
     "column": 65
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "new",
     "line": 3,
     "column": 66
   },
   {
-    "type": "LPAREN",
+    "type": "lparen",
     "literal": "(",
     "line": 3,
     "column": 69
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo",
     "line": 3,
     "column": 70
   },
   {
-    "type": "COMMA",
+    "type": "comma",
     "literal": ",",
     "line": 3,
     "column": 73
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "bar",
     "line": 3,
     "column": 75
   },
   {
-    "type": "RPAREN",
+    "type": "rparen",
     "literal": ")",
     "line": 3,
     "column": 78
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "greeted_n_times",
     "line": 4,
     "column": 80
   },
   {
-    "type": "COLON",
+    "type": "colon",
     "literal": ":",
     "line": 4,
     "column": 95
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Float",
     "line": 4,
     "column": 97
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 4,
     "column": 103
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo_bar",
     "line": 4,
     "column": 105
   },
   {
-    "type": "DOT",
+    "type": "dot",
     "literal": ".",
     "line": 4,
     "column": 112
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "greet",
     "line": 4,
     "column": 113
   },
   {
-    "type": "EOF",
+    "type": "eof",
     "literal": null,
     "line": 1,
     "column": 118

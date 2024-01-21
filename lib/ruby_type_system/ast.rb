@@ -4,16 +4,12 @@ module RubyTypeSystem
   class AstError < StandardError; end
 
   class Ast
-    attr_reader :type, :token, :children
+    attr_reader :type, :token, :statements
 
-    def initialize(type, token, children)
+    def initialize(type, token, statements)
       @type = type
       @token = token
-      @children = children
-    end
-
-    def add_child(node)
-      @children << node
+      @statements = statements
     end
   end
 end

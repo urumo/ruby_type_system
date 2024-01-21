@@ -1,120 +1,120 @@
 [
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "class",
     "line": 1,
     "column": 0
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "Klass",
     "line": 1,
     "column": 6
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "def",
     "line": 2,
     "column": 14
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "initialize",
     "line": 2,
     "column": 18
   },
   {
-    "type": "LPAREN",
+    "type": "lparen",
     "literal": "(",
     "line": 2,
     "column": 28
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo",
     "line": 2,
     "column": 29
   },
   {
-    "type": "COLON",
+    "type": "colon",
     "literal": ":",
     "line": 2,
     "column": 32
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "String",
     "line": 2,
     "column": 34
   },
   {
-    "type": "RPAREN",
+    "type": "rparen",
     "literal": ")",
     "line": 2,
     "column": 40
   },
   {
-    "type": "AT",
+    "type": "at",
     "literal": "@",
     "line": 3,
     "column": 46
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo",
     "line": 3,
     "column": 47
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 3,
     "column": 51
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "foo",
     "line": 3,
     "column": 53
   },
   {
-    "type": "ATAT",
+    "type": "atat",
     "literal": "@@",
     "line": 4,
     "column": 61
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "bar",
     "line": 4,
     "column": 63
   },
   {
-    "type": "ASSIGN",
+    "type": "assign",
     "literal": "=",
     "line": 4,
     "column": 67
   },
   {
-    "type": "NUMBER",
+    "type": "number",
     "literal": "12.34",
     "line": 4,
     "column": 69
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "end",
     "line": 5,
     "column": 77
   },
   {
-    "type": "IDENTIFIER",
+    "type": "identifier",
     "literal": "end",
     "line": 6,
     "column": 81
   },
   {
-    "type": "EOF",
+    "type": "eof",
     "literal": null,
     "line": 1,
     "column": 84
