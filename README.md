@@ -60,6 +60,12 @@ end
 ## How it works
 The RubyTypeSystem is a work in progress. More details will be added as the project evolves.
 = 
+- The system will be implemented as a compiler that compiles Ruby code down to a single expression.
+- The compiler will be written in Ruby.
+- The compiler will be written in a way that allows it to be used as a library and a CLI.
+- All ruby code will be valid RubyTypeSystem code.
+- All type annotations will be compiled down to runtime type checks.
+- The compiler will be able to compile Ruby code without type annotations(will print a lot of warnings).
 
 ## Milestones
 - [x] Create a compressor, that compresses the source codes down to a single file
