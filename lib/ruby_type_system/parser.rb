@@ -5,32 +5,8 @@ require_relative "expressions/identifier"
 module RubyTypeSystem
   module AstTypes
     PROGRAM = :program
-    CLASS = :class
-    MODULE = :module
-    METHOD = :method
-    ARGUMENT = :argument
-    KEYWORD_ARGUMENT = :keyword_argument
-    BLOCK = :block
-    CONSTANT = :constant
-    LOCAL_VARIABLE = :local_variable
-    INSTANCE_VARIABLE = :instance_variable
-    CLASS_VARIABLE = :class_variable
-    GLOBAL_VARIABLE = :global_variable
-    ARRAY = :array
-    HASH = :hash
-    SET = :set
-    RANGE = :range
-    REGEXP = :regexp
-    STRING = :string
-    INTEGER = :integer
-    FLOAT = :float
-    SYMBOL = :symbol
-    BOOLEAN = :boolean
-    NIL = :nil
-    SELF = :self
-    TRUE = true
-    FALSE = false
     EXPRESSION = :expression
+    STATEMENT = :statement
   end
 
   class ParserError < StandardError; end
