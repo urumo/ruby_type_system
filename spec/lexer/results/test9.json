@@ -1,0 +1,392 @@
+[
+  {
+    "type": "module",
+    "literal": "module",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "identifier",
+    "literal": "A",
+    "line": 1,
+    "column": 7
+  },
+  {
+    "type": "identifier",
+    "literal": "CONSTANT",
+    "line": 2,
+    "column": 11
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 2,
+    "column": 20
+  },
+  {
+    "type": "number",
+    "literal": "1",
+    "line": 2,
+    "column": 22
+  },
+  {
+    "type": "identifier",
+    "literal": "CONSTANT_1",
+    "line": 3,
+    "column": 26
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 3,
+    "column": 37
+  },
+  {
+    "type": "shell_command",
+    "literal": "%x(",
+    "line": 3,
+    "column": 39
+  },
+  {
+    "type": "literal",
+    "literal": "ls",
+    "line": 3,
+    "column": 42
+  },
+  {
+    "type": "literal",
+    "literal": "~",
+    "line": 3,
+    "column": 42
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 3,
+    "column": 46
+  },
+  {
+    "type": "identifier",
+    "literal": "CONSTANT_2",
+    "line": 4,
+    "column": 50
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 4,
+    "column": 61
+  },
+  {
+    "type": "string_array",
+    "literal": "%w!",
+    "line": 4,
+    "column": 63
+  },
+  {
+    "type": "literal",
+    "literal": "a",
+    "line": 4,
+    "column": 66
+  },
+  {
+    "type": "literal",
+    "literal": "b",
+    "line": 4,
+    "column": 66
+  },
+  {
+    "type": "literal",
+    "literal": "c",
+    "line": 4,
+    "column": 66
+  },
+  {
+    "type": "literal",
+    "literal": "d",
+    "line": 4,
+    "column": 66
+  },
+  {
+    "type": "literal",
+    "literal": "e",
+    "line": 4,
+    "column": 66
+  },
+  {
+    "type": "literal",
+    "literal": "f",
+    "line": 4,
+    "column": 66
+  },
+  {
+    "type": "bang",
+    "literal": "!",
+    "line": 4,
+    "column": 77
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 6,
+    "column": 82
+  },
+  {
+    "type": "self",
+    "literal": "self",
+    "line": 6,
+    "column": 86
+  },
+  {
+    "type": "dot",
+    "literal": ".",
+    "line": 6,
+    "column": 90
+  },
+  {
+    "type": "identifier",
+    "literal": "log",
+    "line": 6,
+    "column": 91
+  },
+  {
+    "type": "lparen",
+    "literal": "(",
+    "line": 6,
+    "column": 94
+  },
+  {
+    "type": "identifier",
+    "literal": "msg",
+    "line": 6,
+    "column": 95
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 6,
+    "column": 98
+  },
+  {
+    "type": "identifier",
+    "literal": "puts",
+    "line": 7,
+    "column": 104
+  },
+  {
+    "type": "identifier",
+    "literal": "msg",
+    "line": 7,
+    "column": 109
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 8,
+    "column": 115
+  },
+  {
+    "type": "class",
+    "literal": "class",
+    "line": 10,
+    "column": 122
+  },
+  {
+    "type": "identifier",
+    "literal": "A",
+    "line": 10,
+    "column": 128
+  },
+  {
+    "type": "identifier",
+    "literal": "attr_reader",
+    "line": 11,
+    "column": 134
+  },
+  {
+    "type": "colon",
+    "literal": ":",
+    "line": 11,
+    "column": 146
+  },
+  {
+    "type": "identifier",
+    "literal": "name",
+    "line": 11,
+    "column": 147
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 12,
+    "column": 156
+  },
+  {
+    "type": "identifier",
+    "literal": "initialize",
+    "line": 12,
+    "column": 160
+  },
+  {
+    "type": "lparen",
+    "literal": "(",
+    "line": 12,
+    "column": 170
+  },
+  {
+    "type": "identifier",
+    "literal": "name",
+    "line": 12,
+    "column": 171
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 12,
+    "column": 175
+  },
+  {
+    "type": "at",
+    "literal": "@",
+    "line": 13,
+    "column": 183
+  },
+  {
+    "type": "identifier",
+    "literal": "name",
+    "line": 13,
+    "column": 184
+  },
+  {
+    "type": "assign",
+    "literal": "=",
+    "line": 13,
+    "column": 189
+  },
+  {
+    "type": "identifier",
+    "literal": "name",
+    "line": 13,
+    "column": 191
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 14,
+    "column": 200
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 16,
+    "column": 209
+  },
+  {
+    "type": "identifier",
+    "literal": "to_s",
+    "line": 16,
+    "column": 213
+  },
+  {
+    "type": "string",
+    "literal": "\"#{self.class.name}: #{@name}\"",
+    "line": 17,
+    "column": 224
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 18,
+    "column": 259
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 19,
+    "column": 265
+  },
+  {
+    "type": "class",
+    "literal": "class",
+    "line": 21,
+    "column": 272
+  },
+  {
+    "type": "identifier",
+    "literal": "B",
+    "line": 21,
+    "column": 278
+  },
+  {
+    "type": "less_than",
+    "literal": "<",
+    "line": 21,
+    "column": 280
+  },
+  {
+    "type": "identifier",
+    "literal": "A",
+    "line": 21,
+    "column": 282
+  },
+  {
+    "type": "def",
+    "literal": "def",
+    "line": 22,
+    "column": 288
+  },
+  {
+    "type": "identifier",
+    "literal": "initialize",
+    "line": 22,
+    "column": 292
+  },
+  {
+    "type": "lparen",
+    "literal": "(",
+    "line": 22,
+    "column": 302
+  },
+  {
+    "type": "identifier",
+    "literal": "name",
+    "line": 22,
+    "column": 303
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 22,
+    "column": 307
+  },
+  {
+    "type": "super",
+    "literal": "super",
+    "line": 23,
+    "column": 315
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 24,
+    "column": 325
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 25,
+    "column": 331
+  },
+  {
+    "type": "end",
+    "literal": "end",
+    "line": 26,
+    "column": 335
+  },
+  {
+    "type": "eof",
+    "literal": null,
+    "line": 1,
+    "column": 338
+  }
+]

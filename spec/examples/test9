@@ -1,0 +1,26 @@
+module A
+  CONSTANT = 1
+  CONSTANT_1 = %x(ls ~)
+  CONSTANT_2 = %w!a b c d e f!
+
+  def self.log(msg)
+    puts msg
+  end
+
+  class A
+    attr_reader :name
+    def initialize(name)
+      @name = name
+    end
+
+    def to_s
+      "#{self.class.name}: #{@name}"
+    end
+  end
+
+  class B < A
+    def initialize(name)
+      super
+    end
+  end
+end

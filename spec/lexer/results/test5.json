@@ -1,6 +1,6 @@
 [
   {
-    "type": "require",
+    "type": "identifier",
     "literal": "require",
     "line": 1,
     "column": 0
@@ -12,7 +12,7 @@
     "column": 8
   },
   {
-    "type": "require_relative",
+    "type": "identifier",
     "literal": "require_relative",
     "line": 2,
     "column": 19
@@ -24,7 +24,7 @@
     "column": 36
   },
   {
-    "type": "load",
+    "type": "identifier",
     "literal": "load",
     "line": 3,
     "column": 54
@@ -72,7 +72,7 @@
     "column": 108
   },
   {
-    "type": "puts",
+    "type": "identifier",
     "literal": "puts",
     "line": 7,
     "column": 124
@@ -84,7 +84,7 @@
     "column": 129
   },
   {
-    "type": "puts",
+    "type": "identifier",
     "literal": "puts",
     "line": 8,
     "column": 200
@@ -120,7 +120,7 @@
     "column": 289
   },
   {
-    "type": "extend",
+    "type": "identifier",
     "literal": "extend",
     "line": 13,
     "column": 301

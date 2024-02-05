@@ -1,0 +1,248 @@
+[
+  {
+    "type": "string_array",
+    "literal": "%w(",
+    "line": 1,
+    "column": 0
+  },
+  {
+    "type": "literal",
+    "literal": "a",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "literal",
+    "literal": "b",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "literal",
+    "literal": "c",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "literal",
+    "literal": "d",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "literal",
+    "literal": "e",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "literal",
+    "literal": "f",
+    "line": 1,
+    "column": 3
+  },
+  {
+    "type": "rparen",
+    "literal": ")",
+    "line": 1,
+    "column": 14
+  },
+  {
+    "type": "symbol_array",
+    "literal": "%i<",
+    "line": 3,
+    "column": 17
+  },
+  {
+    "type": "literal",
+    "literal": "a",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "literal",
+    "literal": "b",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "literal",
+    "literal": "c",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "literal",
+    "literal": "d",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "literal",
+    "literal": "e",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "literal",
+    "literal": "f",
+    "line": 3,
+    "column": 20
+  },
+  {
+    "type": "greater_than",
+    "literal": ">",
+    "line": 3,
+    "column": 32
+  },
+  {
+    "type": "shell_command",
+    "literal": "%x@",
+    "line": 4,
+    "column": 34
+  },
+  {
+    "type": "literal",
+    "literal": "a",
+    "line": 4,
+    "column": 37
+  },
+  {
+    "type": "literal",
+    "literal": "b",
+    "line": 4,
+    "column": 37
+  },
+  {
+    "type": "literal",
+    "literal": "c",
+    "line": 4,
+    "column": 37
+  },
+  {
+    "type": "literal",
+    "literal": "d",
+    "line": 4,
+    "column": 37
+  },
+  {
+    "type": "literal",
+    "literal": "e",
+    "line": 4,
+    "column": 37
+  },
+  {
+    "type": "literal",
+    "literal": "f",
+    "line": 4,
+    "column": 37
+  },
+  {
+    "type": "at",
+    "literal": "@",
+    "line": 4,
+    "column": 48
+  },
+  {
+    "type": "interpolated_string",
+    "literal": "%Q_",
+    "line": 5,
+    "column": 50
+  },
+  {
+    "type": "literal",
+    "literal": "a",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "literal",
+    "literal": "b",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "literal",
+    "literal": "c",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "literal",
+    "literal": "d",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "literal",
+    "literal": "e",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "literal",
+    "literal": "f",
+    "line": 5,
+    "column": 53
+  },
+  {
+    "type": "identifier",
+    "literal": "_",
+    "line": 5,
+    "column": 64
+  },
+  {
+    "type": "regexp",
+    "literal": "%r!",
+    "line": 6,
+    "column": 66
+  },
+  {
+    "type": "literal",
+    "literal": "a",
+    "line": 6,
+    "column": 69
+  },
+  {
+    "type": "literal",
+    "literal": "b",
+    "line": 6,
+    "column": 69
+  },
+  {
+    "type": "literal",
+    "literal": "c",
+    "line": 6,
+    "column": 69
+  },
+  {
+    "type": "literal",
+    "literal": "d",
+    "line": 6,
+    "column": 69
+  },
+  {
+    "type": "literal",
+    "literal": "e",
+    "line": 6,
+    "column": 69
+  },
+  {
+    "type": "literal",
+    "literal": "f",
+    "line": 6,
+    "column": 69
+  },
+  {
+    "type": "bang",
+    "literal": "!",
+    "line": 6,
+    "column": 80
+  },
+  {
+    "type": "eof",
+    "literal": null,
+    "line": 1,
+    "column": 81
+  }
+]

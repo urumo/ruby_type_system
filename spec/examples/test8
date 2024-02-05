@@ -1,0 +1,9 @@
+%w(a b c
+d e f)
+
+%i<a b c d
+e f
+>
+%x@a b c d e f@
+%Q_a b c d e f_
+%r!a b c d e f!

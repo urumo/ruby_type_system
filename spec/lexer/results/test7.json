@@ -1,6 +1,6 @@
 [
   {
-    "type": "require",
+    "type": "identifier",
     "literal": "require",
     "line": 1,
     "column": 0
@@ -24,7 +24,7 @@
     "column": 26
   },
   {
-    "type": "include",
+    "type": "identifier",
     "literal": "include",
     "line": 4,
     "column": 38
@@ -54,7 +54,7 @@
     "column": 55
   },
   {
-    "type": "extend",
+    "type": "identifier",
     "literal": "extend",
     "line": 5,
     "column": 68
@@ -306,7 +306,7 @@
     "column": 277
   },
   {
-    "type": "puts",
+    "type": "identifier",
     "literal": "puts",
     "line": 16,
     "column": 286
