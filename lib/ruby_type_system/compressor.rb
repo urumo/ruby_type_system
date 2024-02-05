@@ -25,12 +25,28 @@ module RubyTypeSystem
     private
 
     def process_file(path)
+      return "" if path.include?("/generators/")
       return "" if %w[.so .o .dll .dylib .bundle].include?(File.extname(path))
+      return "" unless File.exist?(path)
+
+      if File.directory?(path)
+        return Dir.entries(path).reject { |f| File.directory? f }.map do |file|
+          process_file(File.join(path, file))
+        end.join
+      end
 
       code = File.read(path).force_encoding("UTF-8").encode("UTF-8", invalid: :replace, undef: :replace, replace: "")
 
+      begin
+        RubyVM::InstructionSequence.compile(code)
+      rescue SyntaxError
+        return ""
+      end
+
       code.lines.map do |line|
-        if line.start_with?("require_relative")
+        if line.start_with?(/^\s*#/)
+          ""
+        elsif line.start_with?("require_relative")
           process_require_relative(line, path)
         elsif line.start_with?("require")
           process_require(line)
@@ -54,6 +70,7 @@ module RubyTypeSystem
 
     def process_require(line)
       required_file = line.split.last[1..-2]
+
       gem_require = Gem.find_files(required_file)
       required_path = gem_require.first
 

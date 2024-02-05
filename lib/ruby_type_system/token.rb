@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-
+#
 module RubyTypeSystem
   class TokenError < StandardError; end
 
@@ -7,12 +7,25 @@ module RubyTypeSystem
                 module next nil not or redo rescue retry return self super then true undef unless until when
                 while yield].freeze
 
-  BUILTINS = %w[require require_relative load puts print p raise fail abort exit include extend prepend].freeze
+  # BUILTINS = %w[require require_relative load puts print p raise fail abort exit include extend prepend].freeze
 
   TYPES = %w[Numeric Integer Float String Hash Array Set Symbol Range Regexp Proc IO File Time
              TrueClass FalseClass NilClass Object Class Module Method Struct Expression].freeze
 
-  Token = Struct.new(:type, :literal, :line, :column) do
+  class Token
+    attr_reader :type, :literal, :line, :column
+
+    def initialize(type, literal, line, column)
+      @type = type
+      @literal = literal
+      @line = line
+      @column = column
+    end
+
+    def to_a
+      [type, literal]
+    end
+
     def to_hash
       {
         type: type.to_s,
@@ -22,13 +35,27 @@ module RubyTypeSystem
       }
     end
   end
+
   module TokenType
     STRING = :string
+    LITERAL = :literal
     IDENTIFIER = :identifier
     COLON = :colon
+    SYMBOL = :symbol
     NUMBER = :number
     EQUAL = :equal
     MATCH = :match
+    NOT_MATCH = :not_match
+    HEREDOC = :heredoc
+    PERCENT_I = :symbol_array
+    PERCENT_Q = :non_interpolated_string
+    PERCENT_R = :regexp
+    PERCENT_S = :string_symbol
+    PERCENT_W = :string_array
+    PERCENT_X = :shell_command
+    PERCENT_CAIPTAL_I = :interpolated_symbol_array
+    PERCENT_CAPITAL_Q = :interpolated_string
+    PERCENT_CAPITAL_W = :interpolated_string_array
     ASSIGN = :assign
     PLUS_EQUAL = :plus_equal
     PLUS = :plus
@@ -81,21 +108,21 @@ module RubyTypeSystem
     EOF = :eof
   end
 
-  module Builtins
-    REQUIRE = :require
-    REQUIRE_RELATIVE = :require_relative
-    LOAD = :load
-    PUTS = :puts
-    PRINT = :print
-    P = :p
-    RAISE = :raise
-    FAIL = :fail
-    ABORT = :abort
-    EXIT = :exit
-    INCLUDE = :include
-    EXTEND = :extend
-    PREPEND = :prepend
-  end
+  # module Builtins
+  #   REQUIRE = :require
+  #   REQUIRE_RELATIVE = :require_relative
+  #   LOAD = :load
+  #   PUTS = :puts
+  #   PRINT = :print
+  #   P = :p
+  #   RAISE = :raise
+  #   FAIL = :fail
+  #   ABORT = :abort
+  #   EXIT = :exit
+  #   INCLUDE = :include
+  #   EXTEND = :extend
+  #   PREPEND = :prepend
+  # end
 
   module Keywords
     BEGIN_CAPITAL = :begin_capital
@@ -141,8 +168,8 @@ module RubyTypeSystem
   class << self
     def check_type_or_keyword(token)
       return keyword_token(token) if KEYWORDS.include?(token)
-      return builtin_token(token) if BUILTINS.include?(token)
 
+      # return builtin_token(token) if BUILTINS.include?(token)
       ::RubyTypeSystem::TokenType::IDENTIFIER
     end
 
