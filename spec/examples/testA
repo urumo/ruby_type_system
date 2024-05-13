@@ -1,0 +1,138 @@
+require 'rubygems'
+require 'bundler/setup'
+require 'yaml'
+require 'logger'
+require 'json'
+require 'net/vnc'
+
+def parse_session_id(container_info)
+  container_info[:Names].first =~ /^\/([0-9a-f]+)$/ && $1
+end
+
+def build_conf(homeFolder, browser, version)
+{
+    userHome: homeFolder,
+    desiredCapabilities: {
+        browserName: browser,
+        browserVersion: version,
+        enableVNC: true,
+        pageLoadStrategy: 'eager',
+        sessionTimeout: '8000p',
+        'goog:chromeOptions' => {
+            args: [
+                'user-data-dir=/home/selenium/.config/google-chrome',
+                'profile-directory=Default',
+                'disable-notifications',
+                'disable-infobars',
+                'disable-dev-shm-usage',
+                'start-maximized',
+                'no-sandbox',
+                'restore-last-session',
+                'disable-dinosaur-easter-egg',
+                'disable-session-crashed-bubble',
+                'enable-features=InfiniteSessionRestore'
+               ],
+            excludeSwitches: [ 'enable-automation' ],
+            prefs: {
+                'credentials_enable_service' => false,
+                'profile.default_content_setting_values.notifications' => 2,
+                'profile.password_manager_enabled' => false
+            },
+            useAutomationExtension: false
+}}}
+end
+
+def create_req(uri, conf, att)
+  return nil if att == 0
+  http = Net::HTTP.new(uri.host, uri.port)
+  created = http.post uri.path, conf, $cfg[:json_headers]
+  return JSON.parse(created.body, symbolize_names: true) if created.code.to_i < 300
+  $cfg[:log].warn("Попытка создания контейнера не удалась.")
+  sleep 3 * (5 - att)
+  create_req(uri, conf, att - 1)
+end
+
+def ggr_hash(ip, session)
+  "#{ Digest::MD5.hexdigest("http://#{ ip }:4444") }#{ session }"
+end
+
+def killall(pids)
+  if pids == []
+    $cfg[:log].info "Некого убивать."
+  else
+    $cfg[:log].info "убиваю процессы #{ pids.inspect }"
+    pids.uniq.each do |pid|
+      Process.kill "TERM", pid
+      Process.waitpid pid
+      Process.kill "KILL", pid
+      rescue
+    end
+  end
+end
+
+def get_ssh_redirections()
+  `ps x|grep 'ssh -f -n -A'|grep -v grep`.chomp.split("\n").collect{|l| l[/^\s*(\d+)/, 1].to_i}
+end
+
+def raise_exit(pids, msg)
+  killall pids
+  $cfg[:log].error msg
+  exit 2
+end
+
+def post(uri, body, headers = $cfg[:json_headers])
+  http = Net::HTTP.new(uri.host, uri.port)
+  ret = http.post uri.path, body, headers
+  return JSON.parse(ret.body, symbolize_names: true) if ret.code.to_i < 300
+  raise "Не удалось: #{ uri }, #{ ret.inspect }; #{ ret.body.inspect }"
+end
+
+def init_cfg()
+  $cfg = YAML.load_file("cfg.yml", symbolize_names: true, freeze: false)
+  $cfg[:log] = Logger.new( {"STDERR" => STDERR, "STDOUT" => STDOUT}[ $cfg[:log] ] || File.new( $cfg[:log], 'a+' ) )
+end
+
+def check_connection(hostip)
+  system( "ping -c1 -q -n #{ hostip } >/dev/null 2>&1" ) &&
+  system( "ssh -o StrictHostKeyChecking=accept-new -o ConnectTimeout=15 selenix@#{ hostip } \"echo\"" )
+end
+
+def assert(ret, msg); raise_exit( get_ssh_redirections(), msg ) unless ret; end
+
+def get_container_info(id, host, port)
+  uri = URI "http://#{ host }:#{ port }/containers/#{ id }/json"
+  req = Net::HTTP::Get.new(uri)
+  req['Content-Type'] = 'application/json'
+  res = Net::HTTP.start(uri.hostname, uri.port) {|http| http.request(req)}
+  JSON.parse(res.body, symbolize_names: true)
+end
+
+def exec_in_container(ssh_uri, sessionId, cmd)
+  `ssh -t #{ ssh_uri } "docker exec -it #{ sessionId } #{ cmd }" 2>/dev/null`
+end
+
+def vnc_exec(host, port, pass, &block)
+    count = 0
+    begin
+      sleep 1
+      Net::VNC.open( "#{ host }:#{ port - 5900 }", :shared => true, :password => pass, &block)
+      break
+      rescue Exception => e
+        $cfg[:log].warn "VNC: Попытка #{ count }. #{ e.inspect }"
+        count += 1
+    end while count < 3
+end
+
+def screenshot(host, port, sessionId, ip)
+  pngname = "/tmp/scrn_#{ ip }_#{ sessionId }.png"
+  dst_uri = URI "http://#{ host }:#{ port }/session/#{ sessionId }/screenshot"
+  File.write( pngname,
+    Base64.decode64(
+      JSON.parse( Net::HTTP.get( dst_uri ), symbolize_names: true )[:value]
+  ))
+  $cfg[:log].info "    Снимок экрана в файле #{ pngname }"
+end
+
+def start_session( host, port, conf )
+  post( URI("http://#{ host }:#{ port }/session"), conf.to_json )
+end
